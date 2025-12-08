@@ -1,147 +1,187 @@
 ---
 layout: default
 title: Framework
-description: The Fluid Reliability Framework - Five core pillars for adaptive SRE organizational transformation
+description: Three-Tier Theoretical Architecture and Five Core Practices
 ---
 
-# The Fluid Reliability Framework
+# The Framework: Three-Tier Theoretical Architecture
 
-The Fluid Reliability model emerged as our answer to building an organization not just capable of change, but **structured around it**. This required:
+The Fluid Reliability framework synthesizes six theoretical sources organized into three tiers:
 
-- Rethinking SRE's purpose as an enabler of adaptive systems and stable teams
-- Acknowledging that resilience emerges from intentional human systems design
-- Engineering social infrastructure that makes growth sustainable and change welcome
-
-The result is a paradigm where:
-- **Structure follows purpose**, not static headcount plans
-- **Change is rhythmic**, not traumatic
-- **Engineers are shielded and empowered**, not burdened and burned out
-- **Culture is an intentional practice**, not an accidental byproduct
+- **Tier 1 (Foundation):** Luhmann's semipermeable boundaries + Olivetti's human-centered community — the WHY and WHAT
+- **Tier 2 (Learning):** Argyris & Schön's double-loop learning + Rogers' diffusion — HOW change happens
+- **Tier 3 (Implementation):** Ohno's TPS + Anderson's Kanban — HOW work flows
 
 ---
 
-## Methodological Foundations
+## Tier 1: Foundation — Luhmann + Olivetti
 
-The transformation was grounded in established sociological and organizational frameworks:
+### Luhmann: Semipermeable Boundaries (1995)
 
-### Sociology of Innovation (Rogers, 2003)
+**Key Insight:** Organizations are autopoietic systems that maintain identity through communication boundaries. These boundaries must be semipermeable—filtering noise while transmitting relevant signals.
 
-**Core Insight**: Technical change cannot succeed without cultural adoption. Innovation spreads through legitimacy, peer modeling, and trust—not command or fiat.
+| Concept | Framework Application |
+|---------|----------------------|
+| **Gatekeeping = The Membrane** | Not about blocking work, but intelligent signal processing |
+| **Kanban boards = Visible membrane** | Make the filtering transparent and trustable |
+| **Triage criteria = Filter settings** | Define what passes through vs. queued |
 
-**Applied Practice**: We built internal legitimacy by piloting methods in willing teams, sharing outcomes, and creating cross-team ambassadors. Change became a social process, making adoption contagious.
+### Olivetti: Human Dignity in Productive Work (1958)
 
-### Systems Thinking (Senge, 1990)
+> *"The factory cannot look only at the profit index. It must distribute wealth, culture, services, democracy."*
 
-**Core Insight**: Organizations are networks of feedback loops. Cross-boundary roles foster holistic insight and remove blind spots inherent in siloed systems.
-
-**Applied Practice**: Rotation was structured and measured, enabling engineers to learn and influence across teams. This created contextual empathy, early detection of systemic issues, and prevented knowledge ossification.
-
-### Olivetti's Learning Communities (Olivetti, 1958)
-
-**Core Insight**: "The factory cannot look only at the profit index. It must distribute wealth, culture, services, democracy." Team autonomy must exist within collective direction.
-
-**Applied Practice**: Each SRE team became a learning cell, responsible for its rituals, self-improvement cycles, and peer-to-peer development. Autonomy bred engagement, and engagement bred momentum.
-
-### Luhmann's Systems Theory (Luhmann, 1995)
-
-**Core Insight**: Organizations are autopoietic systems that reproduce themselves through communication. What matters is interaction patterns, not structure on paper.
-
-**Applied Practice**: We created semipermeable interfaces—SREs-in-rotation and embedded liaisons—who transmitted only relevant signals across domains, making communication a strategic asset.
+| Principle | Framework Application |
+|-----------|----------------------|
+| **Burnout prevention = Moral imperative** | Not efficiency optimization—human dignity |
+| **Rotation = Whole-person development** | Engineers grow across contexts |
+| **Team autonomy = Learning cells** | Teams responsible for rituals, improvement, peer development |
 
 ---
 
-## The Five Core Pillars
+## Tier 2: Learning — Argyris/Schön + Rogers
+
+### Argyris & Schön: Double-Loop Learning (1978)
+
+**Key Insight:** Organizations learn in two modes:
+- **Single-loop:** Correcting errors within existing norms
+- **Double-loop:** Questioning and modifying the norms themselves
+
+Quarterly Adaptation institutionalizes double-loop learning. The Management Oversight Board (MoB) exemplifies this: each quarterly review explicitly asks norm-questioning questions—"Does our shape match strategy?"—not just "Are we hitting targets?"
+
+### Rogers: Diffusion of Innovation (2003)
+
+**Key Insight:** Technical change cannot succeed without cultural adoption. Change spreads through social systems via legitimacy, peer modeling, and trust.
+
+---
+
+## Tier 3: Implementation — Ohno + Anderson
+
+### Ohno: Toyota Production System (1978)
+
+> *"All we are doing is looking at the time line from the moment the customer gives us an order to the point when we collect the cash."*
+
+| Concept | Framework Application |
+|---------|----------------------|
+| **Kanban boards = Visual signals** | Make work visible |
+| **Pull-based intake = Demand-driven** | SRE pulls work when capacity available |
+| **WIP limits = Inventory control** | Limit work-in-progress to prevent overload |
+
+### Anderson: Kanban Method for Knowledge Work (2010)
+
+**Critical Connection:** Anderson explicitly states Kanban should be a "humane change method"—aligning with Olivetti. The Kanban board is the visible implementation of Luhmann's membrane.
+
+---
+
+## The Synthesis
+
+> Kanban boards are the visible implementation of Luhmann's membrane, operated with Olivetti's human dignity, improved through Argyris's double-loop learning, spread through Rogers's diffusion patterns.
+
+---
+
+# The Five Core Practices
+
+The framework consists of five interconnected practices that operate **fractally**—each can be applied at team, division, or enterprise levels.
 
 <div class="pillar protect">
-<h4>1. Protect: Gatekeeping with Visibility</h4>
+<h3>1. Structured Gatekeeping</h3>
 
-Shield engineers from noise while maintaining signal responsiveness through:
+**Purpose:** Shield technical teams from operational noise through structured intake processes, visual triage systems, and shared accountability models.
 
-- Kanban-style triage boards shared across SRE and product teams
-- Real-time dashboards showing ticket types, SLA risk, and ownership
-- Upskilling paths for junior staff embedded in triage roles
+**Theoretical Grounding:**
+- Tier 1 (Luhmann): Gatekeeping IS the semipermeable membrane
+- Tier 3 (Ohno/Anderson): Kanban boards IMPLEMENT the membrane visually
 
-**Impact**: Created psychological safety, enabling focus on root causes rather than fire drills.
+**Gatekeeper Evolution: Manual to Intelligent**
+
+| Phase | Period | Description |
+|-------|--------|-------------|
+| Phase 1 | 2021-2022 | Manual triage—gatekeepers review every ticket |
+| Phase 2 | 2023-2024 | Pattern recognition—1,356 automation candidates flagged |
+| Phase 3 | 2025+ | Intelligent membrane—automation handles routine cases |
+
+**Validation:** 86.7% improvement work completion rate; 69% of TOIL handled by consolidated gatekeepers.
 </div>
 
 <div class="pillar prepare">
-<h4>2. Prepare: Rotational Fluency and Follow-the-Sun Operations</h4>
+<h3>2. Rotational Development</h3>
 
-Develop engineers as adaptable professionals through:
+**Purpose:** Develop engineers as rotationally fluent professionals through deliberate cross-pollination.
 
-- Training in multiple "organizational languages" (platform, ops, product, architecture)
-- Context packets, onboarding guides, and internal "tours of duty"
-- Follow-the-Sun methodology enabling round-the-clock delivery without nocturnal work
-- Global team distribution optimizing collective working hours
+**Rotation as Cognitive Countermeasure:** Rotation serves as a structural countermeasure against echo chamber formation and knowledge silos.
 
-**Impact**: Intentional cross-skilling for adaptability, improved work-life balance, increased throughput.
+**Validation:** 90% cross-functional capability; 70% leadership positions filled internally.
 </div>
 
 <div class="pillar pulse">
-<h4>3. Pulse: Organizational Shape Review</h4>
+<h3>3. Quarterly Adaptation</h3>
 
-Quarterly feedback loops asking:
+**Purpose:** Conduct regular feedback loops assessing organizational structure alignment with business evolution.
 
-- Does our team shape match business strategy?
-- Are we defending systems or enabling teams?
-- Are rotations producing clarity or confusion?
+**Management Oversight Board as Double-Loop Mechanism:**
 
-**Impact**: Ensured organizational relevance, not just operational optimization.
+| Quarter | Focus | Outcome |
+|---------|-------|---------|
+| Q1 2025 | Standardization focus | Establishing baselines |
+| Q2 2025 | Active project execution | Zero security incidents |
+| Q3 2025 | Scaling operations | Risk identification |
 </div>
 
 <div class="pillar pool">
-<h4>4. Pool: Shared Talent Without Disruption</h4>
+<h3>4. Shared Resource Management</h3>
 
-Resource pooling addressing "losing my people" concerns through:
+**Purpose:** Maintain shared talent pools that preserve delivery capabilities while enabling temporary reassignment.
 
-- Engineers maintaining home org affiliation with clear return paths
-- Assignment flows backed by automation and metrics, not politics
-- L1 responsibilities offloaded to xOps, preventing backfill gaps
+**FedRAMP Internal Resourcing Case Study:**
 
-**Impact**: Dynamic response to change—roadmap slips, re-architectures, incident follow-ups.
+Rather than engaging external consultants, the organization leveraged internal SRE expertise:
+
+- Team composition: 9 internal + 1 external (vs. typical all-external approach)
+- Cost savings: 40% reduction vs. consultant-based model
+- Knowledge retention: Expertise remains within organization
+
+**Validation:** 2.7x seasonal variance successfully managed.
 </div>
 
 <div class="pillar promote">
-<h4>5. Promote: Culture Carriers and Norm Amplification</h4>
+<h3>5. Visibility & Culture</h3>
 
-Culture as engineered asset through:
+**Purpose:** Treat organizational culture as an engineered asset through intentional identification and amplification of culture carriers.
 
-- Rituals like rotation graduation, postmortem storytelling, shared dashboards
-- Culture carriers identified by influence, not title
-- Promotion tied to contribution to organizational resilience
-
-**Impact**: System remained fluid under pressure through intentional cultural design.
+**Validation:** 15-20% higher retention than adjacent teams; eNPS scores 4.3-4.5/5.
 </div>
 
 ---
 
-## Technical Enablers
+## Communication Architecture
 
-The framework is supported by four key technical capabilities:
+**Purpose:** Design organizational communication as a transmedia membrane system.
 
-| Enabler | Purpose |
-|---------|---------|
-| **Infrastructure as Code (IaC)** | Repeatable, scalable environments |
-| **Service Automation** | Reducing TOIL and engineering flow blockers |
-| **xOps Integration** | Support mesh complementing SRE coverage |
-| **Shared Visibility** | Kanban, Dashboards aligning triage, ownership, and morale |
+Information encounters resistance at every boundary. Effective membrane design creates **differential viscosity**: low resistance for legitimate escalations, high resistance for noise.
+
+### Cadence Ecosystem
+
+| Layer | Cadence | Purpose |
+|-------|---------|---------|
+| **Executive** | MoB (Quarterly) | Strategic decisions |
+| **Leadership** | Monthly Syncs | Alignment, visibility |
+| **Partner** | Ops Review, OLA (Monthly+) | Accountability |
+| **Team** | Standups (Daily), Retrospectives (Sprint) | Coordination |
+| **Artifact** | Documentation, Dashboards (Persistent) | Knowledge persistence |
 
 ---
 
-## Next Steps
-
 <div class="card-grid">
-  <a href="{{ '/framework/evolution/' | relative_url }}" class="card-link">
+  <a href="{{ '/framework/philosophy/' | relative_url }}" class="card-link">
     <div class="card">
-      <h3>Evolution Through Cycles</h3>
-      <p>See how the framework evolved through three major organizational transformations.</p>
+      <h3>← The Mitochondrial Fallacy</h3>
+      <p>Philosophical foundation for adaptive organizations.</p>
     </div>
   </a>
 
-  <a href="{{ '/evidence/' | relative_url }}" class="card-link">
+  <a href="{{ '/framework/evolution/' | relative_url }}" class="card-link">
     <div class="card">
-      <h3>Evidence & Results</h3>
-      <p>Explore the validated outcomes and quantified improvements.</p>
+      <h3>Evolution & Cycles →</h3>
+      <p>Three organizational cycles and milestones.</p>
     </div>
   </a>
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About
-description: About the Fluid Reliability Framework and its author
+description: About the Fluid Reliability Framework, theoretical references, and author
 ---
 
 # About
@@ -14,12 +14,24 @@ This documentation represents applied organizational research distilling six yea
 
 ---
 
-## Transformational Achievements
+## Core Contributions
 
-- Reframed reliability as **structural outcome** of organizational design
-- Developed **cyclic and fractal method** that adapts at scale
-- Demonstrated that **morale and resilience can be systematically engineered**
-- Connected **theory to action** through rotation, visibility, automation, and cultural design
+- **Philosophical Foundation:** The Mitochondrial Fallacy + The Interregnum
+- **Theoretical Integration:** Three-tier architecture (Luhmann, Olivetti, Argyris, Rogers, Ohno, Anderson)
+- **Operational Framework:** Five Core Practices
+- **Quantitative Validation:** 25,498 tickets, 5+ years
+- **Monetary Benefits:** Three-tier confidence model
+- **Historical Documentation:** 2023 proposal establishes prediction-before-outcome
+
+---
+
+## Market Positioning
+
+| Approach | Relationship |
+|----------|--------------|
+| Google SRE | Complementary |
+| Team Topologies | Complementary |
+| Platform Engineering alone | Alternative (cultural change required) |
 
 ---
 
@@ -31,45 +43,38 @@ This documentation represents applied organizational research distilling six yea
 
 ## Theoretical References
 
-The framework draws on established organizational and sociological theory:
+### Primary Sources
 
-| Author | Work | Contribution |
-|--------|------|--------------|
-| Rogers (2003) | *Diffusion of Innovations* | Change as social process |
-| Senge (1990) | *The Fifth Discipline* | Systems thinking and feedback loops |
-| Olivetti (1958) | Learning communities concept | Team autonomy within collective direction |
-| Luhmann (1995) | *Social Systems* | Autopoietic organizational reproduction |
-| Argyris & Schön (1978) | Double-loop learning | Quarterly adaptation methodology |
+| Author | Work | Year | Contribution |
+|--------|------|------|--------------|
+| Anderson, D.J. | *Kanban: Successful Evolutionary Change* | 2010 | Knowledge work flow |
+| Argyris, C. & Schön, D.A. | *Organizational Learning* | 1978 | Double-loop learning |
+| Gramsci, A. | *Prison Notebooks* | 1930 | Interregnum concept |
+| Jenkins, H. | *Convergence Culture* | 2006 | Transmedia communication |
+| Luhmann, N. | *Social Systems* | 1995 | Autopoietic systems |
+| Ohno, T. | *Toyota Production System* | 1978 | Lean manufacturing |
+| Olivetti, A. | Community factory concept | 1958 | Human dignity in work |
+| Rogers, E.M. | *Diffusion of Innovations* | 2003 | Change adoption |
+| Senge, P. | *The Fifth Discipline* | 1990 | Systems thinking |
 
----
+### Secondary Sources (Industry Research)
 
-## Strategic Implementation Framework
-
-### Phase 1: Foundation (Quarters 1-2)
-
-- Formalize internal documentation for onboarding and rotation
-- Implement measurement frameworks for morale, MTTR, and TOIL reduction as strategic KPIs
-- Establish pilot programs in willing business units
-
-### Phase 2: Expansion (Quarters 3-4)
-
-- Capture comparative metrics across divisions
-- Expand feedback and observation loops beyond current implementation
-- Create visibility into existing practices that align or differ within business units
-
-### Phase 3: Enterprise Transformation (Year 2)
-
-- Position Fluid Reliability as strategic foundation for technical and cultural convergence across all business platforms
-- Demonstrate how rotation, resource pooling, automation, and Kanban-based operations improve resiliency enterprise-wide
-- Scale proven practices across all business units
+- DORA State of DevOps Report 2024
+- Catchpoint SRE Report 2025
+- Fortune/DHR Global Burnout Study 2024-2025
+- CharlieHR/Spill Tech Worker Survey 2024
 
 ---
 
-## The Organizational Metabolism Vision
+## The Conclusion
 
-> This is the story of an organization that learned to reshape itself continuously, not as a reaction to change, but as its natural state.
+> *"Companies that change may survive, but companies that transform thrive."*
 
-The framework transforms change from organizational threat to competitive advantage, creating what we term **"organizational metabolism"**—the systematic ability to adapt, grow, and strengthen through environmental pressures rather than despite them.
+The Fluid Reliability framework demonstrates that organizational transformation requires systematic attention to human systems design.
+
+Organizations that cannot metabolize adversity cannot sustain reliability.
+
+**This is the shape of the water:** not a fixed form, but a continuous adaptation to every container it encounters.
 
 ---
 
@@ -92,9 +97,14 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 ---
 
-## Contact
+## Version History
 
-For questions about applying the Fluid Reliability Framework or collaboration opportunities, please reach out through the repository.
+| Version | Date | Changes |
+|---------|------|---------|
+| 6.8 | November 2025 | Integrated Appendix M (Framework Genesis), Mitochondrial Fallacy, Monetary Benefits |
+| 6.7 | November 2025 | Section 8 revision |
+| 6.0-6.6 | November 2025 | Iterative refinements |
+| 5.x | May-October 2025 | Academic treatment, practitioner edition |
 
 ---
 
@@ -106,10 +116,10 @@ For questions about applying the Fluid Reliability Framework or collaboration op
     </div>
   </a>
 
-  <a href="{{ '/framework/' | relative_url }}" class="card-link">
+  <a href="{{ '/framework/philosophy/' | relative_url }}" class="card-link">
     <div class="card">
-      <h3>Framework</h3>
-      <p>Explore the five pillars in detail.</p>
+      <h3>The Mitochondrial Fallacy</h3>
+      <p>Start with the philosophical foundation.</p>
     </div>
   </a>
 </div>

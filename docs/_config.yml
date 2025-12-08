@@ -29,6 +29,8 @@ plugins:
 nav:
   - title: Home
     url: /
+  - title: Philosophy
+    url: /framework/philosophy/
   - title: Framework
     url: /framework/
   - title: Evolution

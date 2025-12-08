@@ -1,82 +1,93 @@
 ---
 layout: default
 title: Evolution Through Cycles
-description: How the Fluid Reliability Framework evolved through three major organizational transformations
+description: Three organizational cycles and the 2026 pipeline
 ---
 
-# Evolution Through Three Organizational Cycles
+# Evolution and Milestones — Three Organizational Cycles
 
-The framework evolved through **cyclic, iterative, and fractal** application rather than linear deployment. Each cycle executed all five foundational phases, adapting to context while maintaining core principles.
+The evolution was not linear—it was **cyclic, iterative, and fractal**. The entire framework was executed during each major organizational cycle.
 
 ![Framework Timeline]({{ '/assets/images/timeline.png' | relative_url }})
 <p class="image-caption">Fluid Reliability Framework Timeline (2019-2025)</p>
 
 ---
 
-## Cycle 1: e-Builder Standalone (2019–2021)
+## 3.1 Cyclic Application
+
+Each cycle comprised all Five Core Practices: Structured Gatekeeping, Rotational Development, Quarterly Adaptation, Shared Resource Management, and Visibility & Culture.
+
+---
+
+## 3.2 Cycle 1: e-Builder Standalone (2019-2021)
 
 <div class="timeline">
 <div class="timeline-item">
 <span class="timeline-date">2019–2021</span>
 <h4>Origin Laboratory</h4>
 
-**Context**: Full autonomy with need to rebuild engineering culture around resilience.
+**Context:** Origin laboratory. Team size: 4 engineers. Full autonomy.
 
-**Execution Highlights**:
+**Execution Highlights:**
 - Gatekeeping introduced structured triage and Kanban-style visual queues
-- Rotational patterns developed internally to reduce siloing
-- Quarterly organizational shape reviews established
-- Early automation pipelines and Terraform adoption reduced TOIL
-- Partnerships with xOps teams created L1 support boundaries
+- Rotational patterns developed to reduce siloing
+- Quarterly "Shape of Water" reviews introduced
 
-**Outcomes**: SRE became proactive, engineering morale improved, internal trust in ops processes rose significantly.
+**Outcome:** 68% reduction in interrupt-driven work. SRE became proactive.
 </div>
 </div>
 
 ---
 
-## Cycle 2: PPM Franchise (2021–Mid 2022)
+## 3.3 Cycle 2: PPM Franchise (2021–Mid 2022)
 
 <div class="timeline">
 <div class="timeline-item">
 <span class="timeline-date">2021–2022</span>
 <h4>Merger Integration</h4>
 
-**Context**: Merger with ProjectSight, Proliance, and Prolog requiring scaling across multiple platforms with differing maturity.
+**Context:** Merger with ProjectSight, Proliance, Prolog. Team: 4 → 16 engineers (300% growth).
 
-**Execution Highlights**:
+**Execution Highlights:**
 - Rotation across product boundaries distributed SRE culture
-- Semipermeable roles provided consistent visibility and boundary definition
-- Shared Kanban boards enabled visibility across siloed teams and geographies
-- Service cataloging and automation enabled platform-wide support abstraction
-- Clear xOps collaboration model maintained escalation control
+- Service cataloging and Rundeck self-service enabled platform-wide abstraction
 
-**Outcomes**: Model proved scalable and interoperable across legacy product stacks.
+**Outcome:** Model proved scalable. Achieved first ISO 27001 certification.
 </div>
 </div>
 
 ---
 
-## Cycle 3: Unity Suite (Mid 2022–Present)
+## 3.4 Cycle 3: Unity Suite (Mid 2022–Present)
 
 <div class="timeline">
 <div class="timeline-item">
 <span class="timeline-date">2022–Present</span>
 <h4>Multi-Product Convergence</h4>
 
-**Context**: Larger multi-product convergence with Cityworks, AgileAssets, and Utilities incorporating new cloud models.
+**Context:** Merger with Cityworks, AgileAssets, Utilities. Team: 12 → 38 engineers (850% total growth). Partner ecosystem (1,000+ customers).
 
-**Execution Highlights**:
-- All five phases reapplied with institutional memory
-- Gatekeeping scaled with automated triage pipelines and shared dashboards
-- IaC standardized infrastructure across divergent environments
-- Resource Pooling matured with dynamic staff deployment backed by data
-- xOps became full partner—support, infra, and platform teams worked as mesh
-- Increased visibility exposed tribal practices, enhancing security posture
+**Service Delivery Team Model:**
 
-**Outcomes**: Fluid Reliability proved portable, scalable, and deeply resilient, becoming the cultural backbone of SRE through successive integrations.
+| Lead | Responsibilities |
+|------|-----------------|
+| Aaron Coltrin | Infrastructure/Tooling + Quarterly Audit Prep |
+| Rachael Kaufman | Compliance/Authorization + FedRAMP leadership |
+| Courtney Patterson | Migrations + Partner Enablement |
+
+**Result:** Zero single points of failure across critical functions.
 </div>
 </div>
+
+---
+
+## 3.5 2026 Pipeline (Framework Continuity Evidence)
+
+The Q3 2025 MoB documented carry-over projects for 2026, demonstrating framework continuity:
+
+- **AgileAssets TID Integration:** Trust ID + MFA across 61 organizations, 147 sites
+- **Cityworks 23.13.1 Fleet Upgrade:** CWOL compliance across all environments
+- **Self-Service Portal Phase 2:** Additional automation candidates
 
 ---
 
@@ -95,55 +106,51 @@ Each cycle demonstrates a key insight: the framework operates **fractally**. The
 
 ---
 
-## Current Experiments and Continuous Evolution
+## Fractal Anti-Patterns
 
-### Workload Categorization and Analysis
+The framework also identifies anti-patterns at each level:
 
-Systematic Jira categorization to:
-- Identify distinct workstreams (improvements, support, service requests)
-- Uncover data-driven insights for resource allocation
-- Enhance predictive capacity for delivery timelines
-- Distribute workload types evenly across team members
-
-### Value-Driven Epic Refinement
-
-Transitioning from time-bound to value-centric approach:
-- Keep Epics open until business value is realized
-- Treat Jira stories as units of deliverable value
-- Promote iterative value delivery through smaller, consumable pieces
-
-### Strategic Epic Prioritization
-
-Moving from "sprinkle and hope" to focused strategy:
-- Clearly prioritized Epic queue with dedicated resources
-- Committed resource allocation ensuring continuity
-- Accelerated high-value feature delivery
+| Level | Anti-Pattern | Countermeasure |
+|-------|-------------|----------------|
+| **Individual** | Hero Culture | Rotation |
+| **Team** | Silo Formation | Cross-pollination |
+| **Department** | Empire Building | Shared resources |
+| **Organization** | Ossification | Norm-questioning |
 
 ---
 
-## Key Learnings
+## Framework Evolution — Continuous Improvement
 
-> "Each merger that could have fractured us instead made us more cohesive, because the framework was designed to metabolize change."
+### Consolidated Gatekeeping Architecture
 
-1. **Prediction preceded outcome**: The 2023 proposal documented hypotheses before validation
-2. **Stakeholder concerns became success criteria**: Every objection we documented became a validation target
-3. **Theoretical grounding shaped design choices**: References to Luhmann, Olivetti, and systems thinking weren't decorative—they guided implementation
-4. **Rotation is an organizational primitive**: It re-nerves a severed organization
+From 3 application-specific gatekeepers to 3 sector-wide gatekeepers.
+
+**Target:** 30% additional TOIL reduction by Q2 2026
+
+### Value-Driven Work Management
+
+Epic Lifecycle Redesign: Time-bound → Value-bound.
+
+### Partner Self-Service Evolution
+
+Q1 2026 Launch: Self-service portal for routine requests.
+
+**Target:** Additional 20% TOIL reduction.
 
 ---
 
 <div class="card-grid">
   <a href="{{ '/framework/' | relative_url }}" class="card-link">
     <div class="card">
-      <h3>← Back to Framework</h3>
-      <p>Review the five core pillars and technical enablers.</p>
+      <h3>← Framework & Theory</h3>
+      <p>Review the five core practices and theoretical architecture.</p>
     </div>
   </a>
 
   <a href="{{ '/evidence/' | relative_url }}" class="card-link">
     <div class="card">
-      <h3>Evidence & Results →</h3>
-      <p>See the quantified outcomes from each cycle.</p>
+      <h3>Evidence & ROI →</h3>
+      <p>See the quantified outcomes and monetary benefits.</p>
     </div>
   </a>
 </div>

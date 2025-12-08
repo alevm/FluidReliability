@@ -1,164 +1,211 @@
 ---
 layout: default
-title: Evidence & Results
-description: Validated outcomes and quantified improvements from the Fluid Reliability Framework
+title: Evidence & ROI
+description: Complete dataset analysis and three-tier monetary benefits model
 ---
 
-# Evidence & Validated Results
+# Quantitative Validation — Complete Dataset Analysis
 
-The Fluid Reliability Framework is backed by **25,498 JIRA tickets** analyzed across six years (2019-2025), with statistical significance of **p < 0.001**.
+Comprehensive validation against **25,498 operational tickets** spanning September 2020 through November 2025.
 
 ---
 
-## Quantified Improvements
+## Data Sources
 
-### TOIL Reduction
+| Board | Tickets | Period |
+|-------|---------|--------|
+| OPSSRE Board (Etools) | 16,799 | Dec 2023 - Nov 2025 |
+| PPMC Board | 5,093 | Sep 2020 - Present |
+| Cityworks SRE Board | 3,606 | Jun 2022 - Present |
+| **Total** | **25,498** | **5+ years** |
+
+---
+
+## TOIL Ratio Trajectory (2021-2025)
+
+**KEY FINDING:** TOIL ratio dropped from 83.9% (2023 peak) to 50.6% (2025)—a **33.3 percentage point reduction**.
+
+| Year | Tickets | TOIL % | Context |
+|------|---------|--------|---------|
+| 2021 | 100 | 73.0% | e-Builder baseline |
+| 2022 | 1,472 | 75.8% | PPM integration |
+| **2023** | 8,045 | **83.9% ▲ PEAK** | Unity stress |
+| 2024 | 9,054 | 63.4% | Framework maturity |
+| **2025** | 6,824 | **50.6% ▼ TARGET** | Google <60% achieved |
 
 <div class="metrics-grid">
   <div class="metric-card">
     <div class="metric-value">83.9%</div>
-    <div class="metric-label">Baseline TOIL (2023 peak)</div>
+    <div class="metric-label">2023 Peak TOIL</div>
   </div>
   <div class="metric-card">
     <div class="metric-value">50.6%</div>
-    <div class="metric-label">Current TOIL (2025)</div>
+    <div class="metric-label">2025 Current TOIL</div>
     <div class="metric-change">Beat Google's &lt;60% target</div>
   </div>
   <div class="metric-card">
     <div class="metric-value">33.3 pts</div>
-    <div class="metric-label">Reduction</div>
+    <div class="metric-label">Total Reduction</div>
   </div>
 </div>
 
-### Burnout and Operational Load
+---
 
-| Product Area | Reduction in Interrupt-Driven Workload |
-|--------------|---------------------------------------|
-| Construct | 68% |
-| AgileAssets | >80% |
-| Unity Maintain/Permit | >80% |
+## Cycle Time Analysis
 
-### Incident Response
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Mean Cycle Time | 17.91 days | 9.50 days | **47% reduction** |
+| P95 Cycle Time | 294.60 days | ~23 days | **92% reduction** |
+| Max Cycle Time | — | — | **81% reduction** |
+
+---
+
+## Incident MTTR (Actual Outage Duration)
+
+MTTR from SRE monitoring (distinct from JIRA cycle time):
 
 <div class="metrics-grid">
   <div class="metric-card">
-    <div class="metric-value">82%</div>
-    <div class="metric-label">MTTR Reduction</div>
-    <div class="metric-change">From 2023 baseline</div>
+    <div class="metric-value">43 min</div>
+    <div class="metric-label">e-Builder MTTR</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value">Faster</div>
-    <div class="metric-label">Escalation Paths</div>
-    <div class="metric-change">Through rotational exposure</div>
+    <div class="metric-value">11 hrs</div>
+    <div class="metric-label">Cityworks MTTR</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value">Reusable</div>
-    <div class="metric-label">Postmortem Rituals</div>
-    <div class="metric-change">Blameless culture established</div>
+    <div class="metric-value">22.6 hrs</div>
+    <div class="metric-label">AgileAssets MTTR</div>
   </div>
 </div>
 
-### Team Growth & Retention
+---
+
+## Seasonality Analysis
+
+**2.7x variance** between peak (1,461 tickets) and low (544 tickets) months—successfully managed through Shared Resource Management practice.
+
+---
+
+## Statistical Significance
+
+| Test | Value | Interpretation |
+|------|-------|----------------|
+| Chi-square test | χ² = 285.4 | Highly significant |
+| P-value | p < 0.001 | Extremely unlikely to be chance |
+| Effect size (Cramér's V) | 0.13 | Medium effect |
+
+---
+
+# Monetary Benefits Analysis — Three-Tier Confidence Model
+
+## Tier 1: Directly Measurable Benefits (High Confidence) — $228,000
+
+| Benefit | Annual Value | Calculation Basis |
+|---------|--------------|-------------------|
+| TOIL Capacity Freed | $153,000 | 1.02 FTE × $150K loaded salary |
+| Automation Potential | $75,000 | 995 hours/year × $75/hr |
+| **TIER 1 TOTAL** | **$228,000** | Directly calculable from JIRA |
+
+## Tier 2: Modeled Benefits (Medium Confidence) — $345K-$691K
+
+| Benefit | Range | Notes |
+|---------|-------|-------|
+| Improvement Work Value | $120K-$241K | Value of completed improvements |
+| MTTR Maintenance | $143K-$287K | Incident cost avoidance |
+| Context Switching Reduction | $29K-$58K | Engineering efficiency |
+| Retention Improvement | $53K-$105K | Reduced turnover costs |
+
+## Tier 3: Strategic Cost Avoidance (Lower Confidence) — Up to $3M
+
+| Benefit | Potential Value | Notes |
+|---------|-----------------|-------|
+| Major Incident Prevention | Up to $2.44M | Based on industry averages |
+| Turnover Cost Avoidance | $450K-$600K | 15-20% retention advantage |
+
+---
+
+## ROI Summary
 
 <div class="metrics-grid">
   <div class="metric-card">
-    <div class="metric-value">4 → 38</div>
-    <div class="metric-label">Team Size</div>
-    <div class="metric-change">850% growth</div>
+    <div class="metric-value">5.2:1 - 7.0:1</div>
+    <div class="metric-label">Conservative ROI</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value">60+</div>
-    <div class="metric-label">eNPS Score</div>
-    <div class="metric-change">Higher than adjacent teams</div>
+    <div class="metric-value">8.4:1 - 11.2:1</div>
+    <div class="metric-label">Moderate ROI</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value">15-20%</div>
-    <div class="metric-label">Retention Advantage</div>
-    <div class="metric-change">vs. peer departments</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">90%</div>
-    <div class="metric-label">Rotation Willingness</div>
-    <div class="metric-change">Engineers willing to rotate again</div>
+    <div class="metric-value">1.7-5.8 mo</div>
+    <div class="metric-label">Payback Period</div>
   </div>
 </div>
 
 ---
 
-## Cross-Organizational Impact
+## Implementation Costs ($82K-$110K annually)
 
-### Before Implementation
-
-- Lack of visibility into department caseload
-- No consistent communication strategies
-- Constant scope creep without consideration of current projects
-- Inconsistent delivery timelines
-- Compliance gaps due to work overload
-
-### After Implementation
-
-- Process development creating clear accountability lines
-- Standardization providing consistency and visibility
-- Improved communication through regular stand-ups and information sharing
-- Aligned departmental and business goals
-
----
-
-## Cultural Transformation Indicators
-
-> "It feels like I finally understand what success looks like in my role."
-
-> "We reset our structure every quarter like we're meant to evolve."
-
-> "I've never been in an org that planned for morale instead of reacting to burnout."
-
----
-
-## Talent Management Outcomes
-
-### Rotational Development Strategy
-
-| Component | Description |
+| Component | Annual Cost |
 |-----------|-------------|
-| **Cross-Pollination** | Multi-context exposure (support, platform, development, architecture) |
-| **Tour-of-Duty Structure** | Time-bound but meaningful rotations with structured onboarding |
-| **Psychological Safety** | Engineers shielded from overload through gatekeeping |
-
-### Measurable Talent Outcomes
-
-- **Mobility Confidence**: 90% willing to rotate again
-- **Cultural Leadership**: Horizontal emergence of leadership and mentorship
-- **High-Touch Onboarding**: Clear integration maps for all new team members
-
-### Strategic Talent Asset Development
-
-- Repeatable framework for training and retaining engineers in volatile environments
-- Practices that reduce burnout while building future leaders
-- Talent engine enabling system scaling without pain scaling
+| Quarterly MoB | $13,680 |
+| Rotation Coordination | $13,520 |
+| Gatekeeping Function | $39,000 |
+| Documentation & Process | $9,000 |
+| Training & Onboarding | $6,000 |
 
 ---
 
-## Validation Dataset
+## Team Health Metrics (2025 Year in Review)
+
+### eNPS Survey Results
+
+| Metric | Score |
+|--------|-------|
+| Communication Satisfaction | 4.3/5 |
+| Relevance of Communication | 4.5/5 |
+| Stress Level | 3.2/5 (manageable) |
+
+### Direct Team Quotes
+
+> *"Micro teaming has been great—you get to know your coworkers as well as have extra advice right then and there."*
+
+> *"Kanban has been a massive improvement for my day-to-day. First time I can get a clear picture of what people are working on."*
+
+---
+
+## Current Operations (November 2025)
 
 | Metric | Value |
 |--------|-------|
-| **Total Tickets Analyzed** | 25,498 |
-| **Time Period** | 2019-2025 (6 years) |
-| **Statistical Significance** | p < 0.001 |
-| **Organizational Cycles** | 3 major transformations |
-| **Products Covered** | e-Builder, ProjectSight, Proliance, Prolog, Cityworks, AgileAssets, Unity Suite |
+| TOIL ratio | 50.6% (Google SRE <60% achieved) |
+| Migration pipeline | 54 total (22 complete, 20 in progress, 12 pipeline) |
+| Compliance | ISO 27001, SOC 2/3, FedRAMP, TX-RAMP, StateRAMP |
+| Security incidents | Zero (Q2 2025) |
 
 ---
 
-## The Irony
+## Limitations and Future Research
 
-> Here's the twist: we're a team that preaches immutable infrastructure—containers that never change in place, configurations that rebuild rather than patch.
->
-> And yet we're arguing that immutable organizational structure is a false promise.
->
-> The contradiction is only apparent. We don't actually achieve immutability in infrastructure—we achieve *idempotent rebuildability*. The container is disposable. The Dockerfile is stable.
->
-> Apply this to organizations: **we don't preserve the team. We preserve the ability to recreate the capability.**
+### Study Limitations
+
+- Single Organization Context
+- Confounding Variables
+- Self-Reported Metrics
+- Retrospective Baseline
+
+### External Validation Opportunities
+
+- SREcon case study presentations
+- Academic partnerships
+- Industry benchmark comparisons
+
+### Future Research Directions
+
+- AI Integration
+- Remote/Distributed Teams
+- Scaling Limits
 
 ---
 
@@ -172,8 +219,8 @@ The Fluid Reliability Framework is backed by **25,498 JIRA tickets** analyzed ac
 
   <a href="{{ '/about/' | relative_url }}" class="card-link">
     <div class="card">
-      <h3>About →</h3>
-      <p>Learn more about the author and how to apply this framework.</p>
+      <h3>About & References →</h3>
+      <p>Theoretical references and author information.</p>
     </div>
   </a>
 </div>
