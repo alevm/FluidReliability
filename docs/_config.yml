@@ -1,0 +1,69 @@
+# Fluid Reliability Framework - Jekyll Configuration
+# GitHub Pages site for the Fluid Reliability SRE Framework
+
+title: Fluid Reliability Framework
+description: >-
+  An adaptive SRE framework for organizational transformation.
+  Validated through 25,498 tickets across 6 years, demonstrating
+  TOIL reduction from 83.9% to 50.6% while scaling team from 4 to 38 engineers.
+
+baseurl: "/FluidReliability" # Subpath of your site, e.g. /blog
+url: "https://alevm.github.io" # Base hostname
+
+# Author
+author:
+  name: Andrea Valenti
+  email: ""
+
+# Build settings
+markdown: kramdown
+theme: null
+remote_theme: pages-themes/minimal@v0.2.0
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Navigation
+nav:
+  - title: Home
+    url: /
+  - title: Framework
+    url: /framework/
+  - title: Evolution
+    url: /framework/evolution/
+  - title: Evidence
+    url: /evidence/
+  - title: About
+    url: /about/
+
+# Collections for organizing content
+collections:
+  framework:
+    output: true
+    permalink: /framework/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "framework"
+    values:
+      layout: "default"
+
+# License
+license: CC BY-NC-SA 4.0
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
