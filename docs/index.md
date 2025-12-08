@@ -6,7 +6,14 @@ title: Home
 <div class="hero">
   <h1>The Shape of the Water</h1>
   <p class="tagline">Fluid Reliability: An Adaptive Framework for SRE Organizational Transformation</p>
+  <p class="hero-subtitle">From Proven SRE Success to Sector-Wide Transformation</p>
   <p style="color: #94a3b8; font-style: italic; max-width: 700px; margin: 0 auto 2rem;">This is the story of an organization that learned to reshape itself continuously, not as a reaction to change, but as its natural state.</p>
+
+  <div class="hero-highlights">
+    <div class="highlight">Scale proven methodologies that delivered <strong>82% MTTR improvement</strong></div>
+    <div class="highlight">Transform organizational change from <strong>business disruption to competitive advantage</strong></div>
+    <div class="highlight">Organizations can be engineered to <strong>thrive on change</strong> rather than merely survive it</div>
+  </div>
 
   <div class="hero-stats">
     <div class="stat">
