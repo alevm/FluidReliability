@@ -128,7 +128,7 @@ Despite promises of AI automation, DORA 2024 research reveals a troubling discon
   <a href="{{ '/framework/evolution/' | relative_url }}" class="card-link">
     <div class="card">
       <h3>Evolution & Cycles</h3>
-      <p>Three organizational cycles: e-Builder, PPM Franchise, Unity Suite.</p>
+      <p>Three organizational cycles demonstrating framework scalability.</p>
     </div>
   </a>
 

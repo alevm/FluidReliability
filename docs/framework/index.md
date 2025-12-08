@@ -131,9 +131,9 @@ The framework consists of five interconnected practices that operate **fractally
 
 **Purpose:** Maintain shared talent pools that preserve delivery capabilities while enabling temporary reassignment.
 
-**FedRAMP Internal Resourcing Case Study:**
+**Compliance Certification Case Study:**
 
-Rather than engaging external consultants, the organization leveraged internal SRE expertise:
+Rather than engaging external consultants, the organization leveraged internal SRE expertise for major compliance certifications:
 
 - Team composition: 9 internal + 1 external (vs. typical all-external approach)
 - Cost savings: 40% reduction vs. consultant-based model

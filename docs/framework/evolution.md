@@ -19,7 +19,7 @@ Each cycle comprised all Five Core Practices: Structured Gatekeeping, Rotational
 
 ---
 
-## 3.2 Cycle 1: e-Builder Standalone (2019-2021)
+## 3.2 Cycle 1: Standalone Product (2019-2021)
 
 <div class="timeline">
 <div class="timeline-item">
@@ -39,18 +39,18 @@ Each cycle comprised all Five Core Practices: Structured Gatekeeping, Rotational
 
 ---
 
-## 3.3 Cycle 2: PPM Franchise (2021–Mid 2022)
+## 3.3 Cycle 2: Product Franchise (2021–Mid 2022)
 
 <div class="timeline">
 <div class="timeline-item">
 <span class="timeline-date">2021–2022</span>
 <h4>Merger Integration</h4>
 
-**Context:** Merger with ProjectSight, Proliance, Prolog. Team: 4 → 16 engineers (300% growth).
+**Context:** Merger integrating multiple acquired products. Team: 4 → 16 engineers (300% growth).
 
 **Execution Highlights:**
 - Rotation across product boundaries distributed SRE culture
-- Service cataloging and Rundeck self-service enabled platform-wide abstraction
+- Service cataloging and self-service automation enabled platform-wide abstraction
 
 **Outcome:** Model proved scalable. Achieved first ISO 27001 certification.
 </div>
@@ -58,22 +58,22 @@ Each cycle comprised all Five Core Practices: Structured Gatekeeping, Rotational
 
 ---
 
-## 3.4 Cycle 3: Unity Suite (Mid 2022–Present)
+## 3.4 Cycle 3: Unified Platform (Mid 2022–Present)
 
 <div class="timeline">
 <div class="timeline-item">
 <span class="timeline-date">2022–Present</span>
 <h4>Multi-Product Convergence</h4>
 
-**Context:** Merger with Cityworks, AgileAssets, Utilities. Team: 12 → 38 engineers (850% total growth). Partner ecosystem (1,000+ customers).
+**Context:** Larger multi-product convergence incorporating new cloud models. Team: 12 → 38 engineers (850% total growth). Partner ecosystem (1,000+ customers).
 
 **Service Delivery Team Model:**
 
-| Lead | Responsibilities |
-|------|-----------------|
-| Aaron Coltrin | Infrastructure/Tooling + Quarterly Audit Prep |
-| Rachael Kaufman | Compliance/Authorization + FedRAMP leadership |
-| Courtney Patterson | Migrations + Partner Enablement |
+| Function | Responsibilities |
+|----------|-----------------|
+| Infrastructure Lead | Infrastructure/Tooling + Quarterly Audit Prep |
+| Compliance Lead | Compliance/Authorization + FedRAMP leadership |
+| Migrations Lead | Migrations + Partner Enablement |
 
 **Result:** Zero single points of failure across critical functions.
 </div>
@@ -83,10 +83,10 @@ Each cycle comprised all Five Core Practices: Structured Gatekeeping, Rotational
 
 ## 3.5 2026 Pipeline (Framework Continuity Evidence)
 
-The Q3 2025 MoB documented carry-over projects for 2026, demonstrating framework continuity:
+The Q3 2025 Management Oversight Board documented carry-over projects for 2026, demonstrating framework continuity:
 
-- **AgileAssets TID Integration:** Trust ID + MFA across 61 organizations, 147 sites
-- **Cityworks 23.13.1 Fleet Upgrade:** CWOL compliance across all environments
+- **Identity Integration:** Trust ID + MFA across multiple organizations and sites
+- **Platform Fleet Upgrade:** Compliance updates across all environments
 - **Self-Service Portal Phase 2:** Additional automation candidates
 
 ---
@@ -123,7 +123,7 @@ The framework also identifies anti-patterns at each level:
 
 ### Consolidated Gatekeeping Architecture
 
-From 3 application-specific gatekeepers to 3 sector-wide gatekeepers.
+From application-specific gatekeepers to sector-wide gatekeepers.
 
 **Target:** 30% additional TOIL reduction by Q2 2026
 

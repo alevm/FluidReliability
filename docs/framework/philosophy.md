@@ -49,7 +49,7 @@ Every element of the Fluid Reliability framework exists because its absence caus
 | 2021 | Team exhaustion | Structured Gatekeeping |
 | 2022 | Knowledge silos | Rotational Development |
 | 2023 | TOIL peak (83.9%) | Quarterly Adaptation |
-| 2024 | FedRAMP requirements | Shared Resource Management |
+| 2024 | Compliance requirements | Shared Resource Management |
 | 2025 | Partner transition | Visibility & Culture extended |
 
 **The pattern: adversity IS input.** What would break a rigid organization strengthens a fluid one.
@@ -188,7 +188,7 @@ Not immutable. Not formless. **Idempotent.**
 
 ## Absorption as Validation
 
-The framework's absorption capacity is its strongest validation. Three major organizational mergers—PPM Franchise, Unity Suite, Partner Ecosystem—each should have created cascading single points of failure as acquired teams brought tribal knowledge, hero dependencies, and undocumented processes.
+The framework's absorption capacity is its strongest validation. Three major organizational mergers—each should have created cascading single points of failure as acquired teams brought tribal knowledge, hero dependencies, and undocumented processes.
 
 Instead, the framework operated as a **dissolution protocol**:
 

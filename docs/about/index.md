@@ -8,7 +8,7 @@ description: About the Fluid Reliability Framework, theoretical references, and 
 
 ## The Framework
 
-**Fluid Reliability** was never designed as a one-time transformation project. It emerged through necessity, iteration, and lived experience of operating within volatility—technical, organizational, and human. What began in the standalone Construct (e-Builder) team grew into a proven, repeatable model applied across three major organizational shifts, consistently delivering stability, resilience, clarity, and morale.
+**Fluid Reliability** was never designed as a one-time transformation project. It emerged through necessity, iteration, and lived experience of operating within volatility—technical, organizational, and human. What began in a standalone product team grew into a proven, repeatable model applied across three major organizational shifts, consistently delivering stability, resilience, clarity, and morale.
 
 This documentation represents applied organizational research distilling six years of practice into a framework grounded in sociology, systems thinking, and technical enablement. The methodology evolved alongside its environment, with outcomes validated through embedded reality rather than theoretical models.
 
@@ -37,7 +37,7 @@ This documentation represents applied organizational research distilling six yea
 
 ## The Author
 
-**Andrea Valenti** leads SRE at the organization, managing 38 engineers across a multi-billion dollar platform. The Fluid Reliability framework documented here emerged from six years of applied research during three major organizational mergers.
+**Andrea Valenti** leads SRE operations managing 38 engineers across a multi-billion dollar platform. The Fluid Reliability framework documented here emerged from six years of applied research during three major organizational mergers.
 
 ---
 

@@ -14,9 +14,9 @@ Comprehensive validation against **25,498 operational tickets** spanning Septemb
 
 | Board | Tickets | Period |
 |-------|---------|--------|
-| OPSSRE Board (Etools) | 16,799 | Dec 2023 - Nov 2025 |
-| PPMC Board | 5,093 | Sep 2020 - Present |
-| Cityworks SRE Board | 3,606 | Jun 2022 - Present |
+| Primary Operations Board | 16,799 | Dec 2023 - Nov 2025 |
+| Legacy Platform Board | 5,093 | Sep 2020 - Present |
+| Acquired Product Board | 3,606 | Jun 2022 - Present |
 | **Total** | **25,498** | **5+ years** |
 
 ---
@@ -27,9 +27,9 @@ Comprehensive validation against **25,498 operational tickets** spanning Septemb
 
 | Year | Tickets | TOIL % | Context |
 |------|---------|--------|---------|
-| 2021 | 100 | 73.0% | e-Builder baseline |
-| 2022 | 1,472 | 75.8% | PPM integration |
-| **2023** | 8,045 | **83.9% ▲ PEAK** | Unity stress |
+| 2021 | 100 | 73.0% | Initial baseline |
+| 2022 | 1,472 | 75.8% | First merger integration |
+| **2023** | 8,045 | **83.9% ▲ PEAK** | Multi-product stress |
 | 2024 | 9,054 | 63.4% | Framework maturity |
 | **2025** | 6,824 | **50.6% ▼ TARGET** | Google <60% achieved |
 
@@ -63,20 +63,20 @@ Comprehensive validation against **25,498 operational tickets** spanning Septemb
 
 ## Incident MTTR (Actual Outage Duration)
 
-MTTR from SRE monitoring (distinct from JIRA cycle time):
+MTTR from SRE monitoring (distinct from ticket cycle time):
 
 <div class="metrics-grid">
   <div class="metric-card">
     <div class="metric-value">43 min</div>
-    <div class="metric-label">e-Builder MTTR</div>
+    <div class="metric-label">Product A MTTR</div>
   </div>
   <div class="metric-card">
     <div class="metric-value">11 hrs</div>
-    <div class="metric-label">Cityworks MTTR</div>
+    <div class="metric-label">Product B MTTR</div>
   </div>
   <div class="metric-card">
     <div class="metric-value">22.6 hrs</div>
-    <div class="metric-label">AgileAssets MTTR</div>
+    <div class="metric-label">Product C MTTR</div>
   </div>
 </div>
 
@@ -106,7 +106,7 @@ MTTR from SRE monitoring (distinct from JIRA cycle time):
 |---------|--------------|-------------------|
 | TOIL Capacity Freed | $153,000 | 1.02 FTE × $150K loaded salary |
 | Automation Potential | $75,000 | 995 hours/year × $75/hr |
-| **TIER 1 TOTAL** | **$228,000** | Directly calculable from JIRA |
+| **TIER 1 TOTAL** | **$228,000** | Directly calculable from data |
 
 ## Tier 2: Modeled Benefits (Medium Confidence) — $345K-$691K
 
