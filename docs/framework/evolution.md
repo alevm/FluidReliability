@@ -95,8 +95,7 @@ The Q3 2025 Management Oversight Board documented carry-over projects for 2026, 
 
 Each cycle demonstrates a key insight: the framework operates **fractally**. The same five pillars apply at different scales:
 
-![Fractal Timeline]({{ '/assets/images/fractal-timeline.png' | relative_url }})
-<p class="image-caption">Fractal view: The same patterns repeat at individual, team, and organization levels</p>
+<!-- Fractal diagram: The same patterns repeat at individual, team, and organization levels -->
 
 | Scale | Protect | Prepare | Pulse | Pool | Promote |
 |-------|---------|---------|-------|------|---------|
