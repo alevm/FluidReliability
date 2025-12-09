@@ -7,12 +7,18 @@ permalink: /framework/
 
 # The Framework
 
+| Version | Date | Author |
+|---------|------|--------|
+| **{{ site.data.version.version }}** | **{{ site.data.version.date }}** | {{ site.data.version.author }} |
+
+---
+
 ## Three-Tier Theoretical Architecture
 
 The Fluid Reliability framework synthesizes six theoretical sources organized into three tiers:
 
-![Theoretical Tiers](../assets/images/graphs/theoretical_tiers.png)
-*Three-tier theoretical architecture synthesizing six academic sources*
+![Theoretical Tiers]({{ site.baseurl }}/assets/images/graphs/theoretical_tiers.png)
+*Figure 1: Three-tier theoretical architecture synthesizing six academic sources*
 
 - **Tier 1 (Foundation):** Luhmann + Olivetti — the WHY and WHAT
 - **Tier 2 (Learning):** Argyris/Schön + Rogers — HOW change happens
@@ -86,15 +92,15 @@ Kanban boards are the visible implementation of Luhmann's membrane, operated wit
 
 ## The Five Core Practices
 
-![Five Core Practices](../assets/images/graphs/five_practices.png)
-*The Five Core Practices — Protect, Prepare, Pulse, Pool, Promote*
+![Five Core Practices]({{ site.baseurl }}/assets/images/graphs/five_practices.png)
+*Figure 2: The Five Core Practices — Protect, Prepare, Pulse, Pool, Promote*
 
 ### 1. Structured Gatekeeping
 
 **Purpose:** Shield technical teams from operational noise through structured intake processes, visual triage systems, and shared accountability models.
 
-![Gatekeeper Evolution](../assets/images/graphs/gatekeeper_evolution.png)
-*Gatekeeper evolution from manual triage to intelligent membrane*
+![Gatekeeper Evolution]({{ site.baseurl }}/assets/images/graphs/gatekeeper_evolution.png)
+*Figure 3: Gatekeeper evolution from manual triage to intelligent membrane*
 
 **Evolution:**
 - Phase 1 (2021-2022): Manual triage
@@ -144,8 +150,8 @@ Rotation serves as a structural countermeasure against echo chamber formation an
 
 The framework operates fractally—the same five practices apply at different scales:
 
-![Fractal Levels](../assets/images/graphs/fractal_levels.png)
-*Fractal application at Individual, Team, and Organization levels*
+![Fractal Levels]({{ site.baseurl }}/assets/images/graphs/fractal_levels.png)
+*Figure 4: Fractal application at Individual, Team, and Organization levels*
 
 | Scale | Protect | Prepare | Pulse | Pool | Promote |
 |-------|---------|---------|-------|------|---------|

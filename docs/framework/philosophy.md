@@ -9,8 +9,14 @@ permalink: /framework/philosophy/
 
 *A Philosophical Foundation for Adaptive Organizations*
 
-![Sisyphus](../assets/images/sisyphus.jpg)
-*Sisyphus by Franz von Stuck (1920) — The eternal struggle against repetitive, thankless work mirrors the TOIL burden in SRE organizations*
+| Version | Date | Author |
+|---------|------|--------|
+| **{{ site.data.version.version }}** | **{{ site.data.version.date }}** | {{ site.data.version.author }} |
+
+---
+
+![Sisyphus]({{ site.baseurl }}/assets/images/sisyphus.jpg)
+*Figure 1: Sisyphus by Franz von Stuck (1920) — The eternal struggle against repetitive, thankless work mirrors the TOIL burden in SRE organizations*
 
 ---
 

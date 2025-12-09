@@ -7,12 +7,16 @@ title: Fluid Reliability Framework
 
 **{{ site.data.version.subtitle }}**
 
-*Version {{ site.data.version.version }} | {{ site.data.version.date }} | {{ site.data.version.author }}*
+---
+
+| Version | Date | Author | Dataset |
+|---------|------|--------|---------|
+| **{{ site.data.version.version }}** | **{{ site.data.version.date }}** | {{ site.data.version.author }} | {{ site.data.version.dataset.tickets }} tickets ({{ site.data.version.dataset.years }}) |
 
 ---
 
-![Key Metrics Dashboard](assets/images/graphs/metrics_dashboard.png)
-*Framework outcomes across all major indicators*
+![Key Metrics Dashboard]({{ site.baseurl }}/assets/images/graphs/metrics_dashboard.png)
+*Figure 1: Key metrics dashboard showing framework outcomes across all major indicators*
 
 ## An Organization That Learned to Adapt
 
@@ -45,8 +49,8 @@ The framework is validated through analysis of **{{ site.data.version.dataset.ti
 
 The SRE industry faces unprecedented challenges:
 
-![Burnout Crisis](assets/images/graphs/burnout_crisis.png)
-*Industry burnout statistics (2024-2025)*
+![Burnout Crisis]({{ site.baseurl }}/assets/images/graphs/burnout_crisis.png)
+*Figure 2: Industry burnout statistics (2024-2025)*
 
 - **82%** of employees at risk of burnout (Fortune/DHR Global 2024-2025)
 - **57%** of SREs spend more than half their week on TOIL despite AI adoption
@@ -76,8 +80,8 @@ The framework synthesizes six academic sources into three tiers:
 
 ## The Five Core Practices
 
-![Five Core Practices](assets/images/graphs/five_practices.png)
-*The Five P's: Protect, Prepare, Pulse, Pool, Promote*
+![Five Core Practices]({{ site.baseurl }}/assets/images/graphs/five_practices.png)
+*Figure 3: The Five P's — Protect, Prepare, Pulse, Pool, Promote*
 
 ### 1. Structured Gatekeeping
 Shield technical teams from operational noise through structured intake processes and visual triage systems. Acts as Luhmann's "semipermeable membrane" for the organization.

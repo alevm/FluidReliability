@@ -7,12 +7,18 @@ permalink: /evidence/
 
 # Evidence & ROI
 
+| Version | Date | Author |
+|---------|------|--------|
+| **{{ site.data.version.version }}** | **{{ site.data.version.date }}** | {{ site.data.version.author }} |
+
+---
+
 ## Quantitative Validation
 
 Comprehensive validation against **25,498 operational tickets** spanning September 2020 through November 2025.
 
-![Ticket Volume](../assets/images/graphs/ticket_volume.png)
-*Ticket volume growth across 5 years — 25,498 total tickets analyzed*
+![Ticket Volume]({{ site.baseurl }}/assets/images/graphs/ticket_volume.png)
+*Figure 1: Ticket volume growth across 5 years — 25,498 total tickets analyzed*
 
 ---
 
@@ -31,8 +37,8 @@ Comprehensive validation against **25,498 operational tickets** spanning Septemb
 
 TOIL ratio dropped from 83.9% (2023 peak) to 50.6% (2025)—a **33.3 percentage point reduction**.
 
-![TOIL Trajectory](../assets/images/graphs/toil_trajectory.png)
-*TOIL ratio trajectory showing 33.3pp reduction and Google SRE target achievement*
+![TOIL Trajectory]({{ site.baseurl }}/assets/images/graphs/toil_trajectory.png)
+*Figure 2: TOIL ratio trajectory showing 33.3pp reduction and Google SRE target achievement*
 
 | Year | Tickets | TOIL % | Context |
 |------|---------|--------|---------|
@@ -52,8 +58,8 @@ The framework's response: Quarterly Adaptation surfaced that the problem wasn't 
 
 ## Cycle Time Analysis
 
-![Cycle Time Comparison](../assets/images/graphs/cycle_time_comparison.png)
-*Cycle time improvement — 47% mean reduction, 92% P95 reduction*
+![Cycle Time Comparison]({{ site.baseurl }}/assets/images/graphs/cycle_time_comparison.png)
+*Figure 3: Cycle time improvement — 47% mean reduction, 92% P95 reduction*
 
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
@@ -87,8 +93,8 @@ MTTR from SRE monitoring (distinct from ticket cycle time):
 
 ## Monetary Benefits
 
-![ROI Tiers](../assets/images/graphs/roi_tiers.png)
-*Three-tier confidence model with ROI ranging from 5.2:1 to 11.2:1*
+![ROI Tiers]({{ site.baseurl }}/assets/images/graphs/roi_tiers.png)
+*Figure 4: Three-tier confidence model with ROI ranging from 5.2:1 to 11.2:1*
 
 ### Tier 1: Directly Measurable (High Confidence) — $228,000/year
 
