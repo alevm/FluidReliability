@@ -5,26 +5,40 @@ title: Fluid Reliability Framework
 
 # Fluid Reliability Framework
 
-**An Adaptive Framework for SRE Organizational Transformation**
+**{{ site.data.version.subtitle }}**
 
-*Version 7.0 | December 2025 | Andrea Valenti*
+*Version {{ site.data.version.version }} | {{ site.data.version.date }} | {{ site.data.version.author }}*
+
+---
+
+## Transform Your SRE Organization
+
+**Your team is drowning in TOIL. Your best engineers are burning out. Every acquisition sets you back to zero.**
+
+This framework changed that for us—and it can change it for you.
+
+In 2023, our TOIL hit 83.9%. We were overwhelmed, losing ground with every merger. By 2025, we hit 50.6%—beating Google's target—while growing from 4 to 38 engineers with zero critical knowledge loss.
+
+**This isn't theory. It's six years of validated practice.**
+
+<a href="/FluidReliability/download/" style="background: #2c5282; color: white; padding: 12px 24px; text-decoration: none; display: inline-block; margin: 20px 0;">Download the Whitepaper</a>
 
 ---
 
 ## Abstract
 
-This documentation presents an SRE organizational transformation framework developed through six years of applied research (2019-2025). The framework—titled "Fluid Reliability"—addresses the documented SRE burnout crisis through five interconnected practices: Structured Gatekeeping, Rotational Development, Quarterly Adaptation, Shared Resource Management, and Visibility & Culture.
+This documentation presents an SRE organizational transformation framework developed through six years of applied research ({{ site.data.version.dataset.years }}). The framework—titled "Fluid Reliability"—addresses the documented SRE burnout crisis through five interconnected practices: Structured Gatekeeping, Rotational Development, Quarterly Adaptation, Shared Resource Management, and Visibility & Culture.
 
-The framework is validated through analysis of **25,498 operational tickets** spanning five years across three JIRA boards.
+The framework is validated through analysis of **{{ site.data.version.dataset.tickets | default: 25498 }} operational tickets** spanning five years across {{ site.data.version.dataset.boards }} JIRA boards.
 
 ### Key Outcomes
 
 | Metric | Before | After | Change |
 |--------|--------|-------|--------|
-| TOIL Ratio | 83.9% (2023) | 50.6% (2025) | -33.3 pp |
-| P95 Cycle Time | 294.6 days | ~23 days | -92% |
-| Team Size | 4 engineers | 38 engineers | +850% |
-| Retention | Baseline | +15-20% vs peers | Sustained |
+| TOIL Ratio | {{ site.data.version.metrics.toil_before }} (2023) | {{ site.data.version.metrics.toil_after }} (2025) | -{{ site.data.version.metrics.toil_reduction }} pp |
+| P95 Cycle Time | {{ site.data.version.metrics.p95_cycle_before }} | {{ site.data.version.metrics.p95_cycle_after }} | -{{ site.data.version.metrics.p95_improvement }} |
+| Team Size | {{ site.data.version.team.initial }} engineers | {{ site.data.version.team.current }} engineers | +{{ site.data.version.team.growth_percent }}% |
+| Retention | Baseline | +{{ site.data.version.metrics.retention_improvement }} vs peers | Sustained |
 
 ---
 
@@ -97,13 +111,13 @@ Organizations that cannot metabolize adversity cannot sustain reliability. The f
 
 ## Statistical Validation
 
-- **Dataset:** 25,498 tickets across 5+ years
-- **Chi-square:** χ² = 285.4, p < 0.001
-- **Effect size:** Cramér's V = 0.13 (medium)
-- **ROI:** 5.2:1 to 11.2:1 depending on confidence tier
+- **Dataset:** {{ site.data.version.dataset.tickets }} tickets across {{ site.data.version.dataset.years }}
+- **Chi-square:** χ² = {{ site.data.version.stats.chi_square }}, p {{ site.data.version.stats.p_value }}
+- **Effect size:** Cramér's V = {{ site.data.version.stats.cramers_v }} ({{ site.data.version.stats.effect_size }})
+- **ROI:** {{ site.data.version.stats.roi_low }} to {{ site.data.version.stats.roi_high }} depending on confidence tier
 
 ---
 
 ## License
 
-This work is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This work is licensed under [{{ site.data.version.license }}](https://creativecommons.org/licenses/by-nc-sa/4.0/).

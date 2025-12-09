@@ -2,6 +2,7 @@
 layout: default
 title: Evolution Through Cycles
 description: Three organizational cycles and framework continuity
+permalink: /framework/evolution/
 ---
 
 # Evolution and Milestones

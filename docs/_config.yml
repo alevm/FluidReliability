@@ -4,7 +4,7 @@
 title: Fluid Reliability Framework
 description: >-
   An adaptive SRE framework for organizational transformation.
-  Version 7.0 - Validated through 25,498 tickets across 6 years,
+  Version 7.1 - Validated through 25,498 tickets across 6 years,
   demonstrating TOIL reduction from 83.9% to 50.6% while scaling
   team from 4 to 38 engineers.
 
@@ -38,25 +38,16 @@ nav:
     url: /framework/evolution/
   - title: Evidence
     url: /evidence/
+  - title: Download
+    url: /download/
   - title: About
     url: /about/
-
-# Collections for organizing content
-collections:
-  framework:
-    output: true
-    permalink: /framework/:name/
 
 # Defaults
 defaults:
   - scope:
       path: ""
       type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "framework"
     values:
       layout: "default"
 

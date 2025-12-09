@@ -2,6 +2,7 @@
 layout: default
 title: The Mitochondrial Fallacy
 description: A philosophical foundation for adaptive organizations
+permalink: /framework/philosophy/
 ---
 
 # The Mitochondrial Fallacy

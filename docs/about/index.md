@@ -2,6 +2,7 @@
 layout: default
 title: About
 description: References and author information
+permalink: /about/
 ---
 
 # About
@@ -37,7 +38,7 @@ This documentation represents applied organizational research distilling six yea
 
 ## Author
 
-**Andrea Valenti** leads SRE operations managing 38 engineers across a multi-billion dollar platform. The Fluid Reliability framework documented here emerged from six years of applied research during three major organizational mergers.
+**Andrea Valenti** leads SRE operations managing 38 engineers across a $200M+ platform. The Fluid Reliability framework documented here emerged from six years of applied research during three major organizational mergers.
 
 ---
 
@@ -68,6 +69,7 @@ This documentation represents applied organizational research distilling six yea
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 7.1 | December 2025 | Added testimonials, 2023 failure narrative, Interregnum threading |
 | 7.0 | December 2025 | Master synthesis, comprehensive documentation |
 | 6.8 | November 2025 | Appendix M, Mitochondrial Fallacy, Monetary Benefits |
 | 6.0-6.7 | November 2025 | Iterative refinements |

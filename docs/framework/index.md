@@ -2,6 +2,7 @@
 layout: default
 title: Framework & Theory
 description: Three-Tier Theoretical Architecture and Five Core Practices
+permalink: /framework/
 ---
 
 # The Framework

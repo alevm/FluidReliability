@@ -1,0 +1,43 @@
+# Fluid Reliability Framework - Version Metadata
+# This file is the single source of truth for version info
+# Used by: docs (Jekyll), whitepaper, sync scripts
+
+version: "7.1"
+date: "December 2025"
+author: "Andrea Valenti"
+title: "Fluid Reliability Framework"
+subtitle: "An Adaptive Framework for SRE Organizational Transformation"
+
+# Dataset metadata
+dataset:
+  tickets: 25498
+  years: "2019-2025"
+  boards: 3
+
+# Team metrics
+team:
+  initial: 4
+  current: 38
+  growth_percent: 850
+
+# Key outcomes (keep in sync with whitepaper Section 6)
+metrics:
+  toil_before: "83.9%"
+  toil_after: "50.6%"
+  toil_reduction: "33.3"
+  p95_cycle_before: "294.6 days"
+  p95_cycle_after: "~23 days"
+  p95_improvement: "92%"
+  retention_improvement: "15-20%"
+
+# Statistical validation
+stats:
+  chi_square: 285.4
+  p_value: "< 0.001"
+  cramers_v: 0.13
+  effect_size: "medium"
+  roi_low: "5.2:1"
+  roi_high: "11.2:1"
+
+# License
+license: "CC BY-NC-SA 4.0"

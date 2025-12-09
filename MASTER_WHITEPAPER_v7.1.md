@@ -1,7 +1,7 @@
 # THE SHAPE OF THE WATER
 ## Fluid Reliability: A Comprehensive Framework for SRE Organizational Transformation
 
-**Master Edition | Version 7.0**
+**Master Edition | Version 7.1**
 
 **December 2025**
 
@@ -14,7 +14,7 @@
 ---
 
 **Validated Dataset:** 25,498 Operational Tickets | 6 Years (2019-2025) | 3 JIRA Boards
-**Operational Scope:** 54 Customer Migrations | Multi-billion Dollar Platform Operations
+**Operational Scope:** 54 Customer Migrations | $200M+ Platform Operations
 **Team Evolution:** 4 → 38 Engineers (850% growth)
 
 ---
@@ -416,6 +416,8 @@ This synthesis distinguishes Fluid Reliability from purely technical frameworks.
 
 The evolution was not linear—it was **cyclic, iterative, and fractal**. The entire framework was executed during each major organizational cycle.
 
+Each cycle was its own interregnum—a transitional period where the old organizational structure was dying and the new had not yet emerged. The morbid symptoms appeared on schedule: confusion, resistance, the gravitational pull toward familiar dysfunction. The framework's value was not preventing these symptoms but providing a metabolism for processing them.
+
 ---
 
 ## 3.1 Cyclic Application
@@ -640,13 +642,31 @@ Rather than engaging external consultants, the organization leveraged internal S
 - eNPS scores: Communication Satisfaction 4.3/5, Relevance 4.5/5
 - Stress Level: 3.2/5 (manageable range)
 
-### Direct Team Quotes
+### Voices from the Team
 
+Anonymous feedback from eNPS surveys (2023-2025) reveals how the framework was experienced:
+
+**On Kanban and Visibility:**
+> *"Changing our workflow to use Kanban has been a massive improvement for my day-to-day. Now that we've been with it for a couple months it is easy to see how chaotic things were in the past. It also appears to have greatly helped the team as a whole. This is the first time I can get a clear picture of what people are working on."*
+
+**On Micro-Teaming and Rotation:**
 > *"Micro teaming has been great—you get to know your coworkers as well as have extra advice right then and there."*
 
-> *"Kanban has been a massive improvement for my day-to-day. First time I can get a clear picture of what people are working on."*
+> *"Team members in micro teams had more ownership over their work, which boosted motivation."*
 
+> *"Cell concept is really good. Creating cells every quarter and knowledge sharing is a good approach."*
+
+**On Experimentation:**
 > *"I have never in my career experimented as much as in these few years."* — Principal Architect, 30 years experience
+
+**Honest Critiques (What Didn't Work):**
+> *"Pairing between different geographical locations didn't seem to have worked well this quarter."*
+
+> *"Still a lot of focus shift happening so epics deliveries are not perfect."*
+
+> *"We need more enforcement for micro teams on collaboration."*
+
+These critiques drove framework refinement. Geographic pairing challenges led to the Follow-the-Sun model. Focus shift issues informed WIP limit policies. The framework metabolizes criticism into structural improvement.
 
 ---
 
@@ -710,6 +730,20 @@ Comprehensive validation against **25,498 operational tickets** spanning Septemb
 | **2023** | 8,045 | **83.9% ▲ PEAK** | Multi-product stress |
 | 2024 | 9,054 | 63.4% | Framework maturity |
 | **2025** | 6,824 | **50.6% ▼ TARGET** | Google <60% achieved |
+
+### The 2023 Crisis: A Failure Metabolized
+
+The 83.9% TOIL peak was not an abstraction—it was lived experience. It was the interregnum at its most acute: the old ways dying, the new not yet born, and the morbid symptoms everywhere.
+
+In 2023, the organization absorbed multiple acquired teams simultaneously. Each acquisition brought its own operational culture: different ticketing conventions, undocumented tribal knowledge, hero dependencies, and manual processes we thought we had already eliminated in earlier cycles. **We had to step backward in maturity.** Processes that had become automated reverted to manual. Cultural patterns we believed resolved resurfaced in the newly integrated groups.
+
+The team was overwhelmed. Engineers who had experienced the earlier, more mature state found themselves drowning in repetitive tasks. The frustration was palpable: *we had solved this before—why were we solving it again?*
+
+The framework's response was not to push harder on the same approach. Instead, Quarterly Adaptation surfaced the pattern: **the problem wasn't technical debt—it was cultural debt from the acquisitions.** The acquired teams carried operational habits that couldn't be documented away; they had to be rotated out.
+
+Over 2024, deliberate rotation moved engineers across the merged boundaries. Those carrying the original framework culture worked alongside those from acquired teams. Knowledge transferred not through documentation but through proximity. The cultural tide turned not through mandate but through exposure.
+
+By 2025, TOIL had dropped to 50.6%—not because we avoided the crisis, but because we metabolized it. The 2023 peak became input for the 2024-2025 recovery. **Adversity taught reliability.**
 
 **Interpretation:** More than one-third of operational burden eliminated through systematic framework application. The 2023 peak represents the stress of multi-product convergence; the subsequent decline validates the framework's ability to metabolize that stress.
 
@@ -995,7 +1029,7 @@ The Fluid Reliability framework demonstrates that:
 
 ## 11.4 The Promise
 
-We cannot prevent the interregnum. The old organizational models will continue dying whether we participate or not. The new models will continue struggling to be born.
+We cannot prevent the interregnum—that transitional period where the old is dying and the new struggles to be born. The permanent-team, fixed-role, knowledge-in-heads model will continue failing whether we participate or not. The fluid-team, rotational, knowledge-in-systems model will continue emerging.
 
 What we can choose is how to navigate:
 
@@ -1090,6 +1124,7 @@ In early 2023, before the quantitative validation documented in this paper, a cr
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 7.1 | December 2025 | Added testimonials, 2023 failure narrative, Interregnum threading |
 | 7.0 | December 2025 | Master synthesis of full archive |
 | 6.8 | November 2025 | Integrated Appendix M, Mitochondrial Fallacy, Monetary Benefits |
 | 6.7 | November 2025 | Section 8 revision |

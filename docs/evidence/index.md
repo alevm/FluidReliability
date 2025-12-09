@@ -2,6 +2,7 @@
 layout: default
 title: Evidence & ROI
 description: Quantitative validation and monetary benefits analysis
+permalink: /evidence/
 ---
 
 # Evidence & ROI
@@ -34,6 +35,12 @@ TOIL ratio dropped from 83.9% (2023 peak) to 50.6% (2025)—a **33.3 percentage 
 | 2023 | 8,045 | **83.9%** | Peak (multi-product stress) |
 | 2024 | 9,054 | 63.4% | Framework maturity |
 | 2025 | 6,824 | **50.6%** | Google <60% achieved |
+
+### The 2023 Crisis: A Failure Metabolized
+
+The 83.9% peak was lived experience. Multiple acquired teams brought their own cultures: different ticketing conventions, tribal knowledge, hero dependencies, and manual processes we thought we had eliminated. **We stepped backward in maturity.**
+
+The framework's response: Quarterly Adaptation surfaced that the problem wasn't technical debt—it was *cultural debt* from acquisitions. Deliberate rotation moved engineers across merged boundaries. By 2025, the cultural tide had turned.
 
 ---
 
@@ -126,6 +133,17 @@ MTTR from SRE monitoring (distinct from ticket cycle time):
 | Communication Satisfaction | 4.3/5 |
 | Relevance of Communication | 4.5/5 |
 | Stress Level | 3.2/5 (manageable) |
+
+### Voices from the Team
+
+> *"Kanban has been a massive improvement for my day-to-day. This is the first time I can get a clear picture of what people are working on."*
+
+> *"Micro teaming has been great—you get to know your coworkers as well as have extra advice right then and there."*
+
+> *"I have never in my career experimented as much as in these few years."* — Principal Architect, 30 years experience
+
+**Honest critiques** that drove refinement:
+> *"Pairing between different geographical locations didn't seem to have worked well this quarter."*
 
 ---
 
