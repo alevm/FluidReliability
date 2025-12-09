@@ -9,10 +9,10 @@
   {% seo %}
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-      <nav class="site-nav">
+  <header>
+    <div class="wrapper">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <nav>
         {% for item in site.nav %}
           <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
         {% endfor %}
@@ -20,25 +20,15 @@
     </div>
   </header>
 
-  <main class="site-content">
-    <div class="container">
+  <div class="wrapper">
+    <main>
       {{ content }}
-    </div>
-  </main>
+    </main>
+  </div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <p class="license">
-          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-            <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
-          </a>
-          <br>
-          This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-        </p>
-        <p class="author">{{ site.author.name }} | {{ "now" | date: "%Y" }}</p>
-      </div>
-    </div>
+  <footer>
+    <p>{{ site.author.name }} · Version 7.0 · December 2025</p>
+    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
   </footer>
 </body>
 </html>

@@ -4,8 +4,9 @@
 title: Fluid Reliability Framework
 description: >-
   An adaptive SRE framework for organizational transformation.
-  Validated through 25,498 tickets across 6 years, demonstrating
-  TOIL reduction from 83.9% to 50.6% while scaling team from 4 to 38 engineers.
+  Version 7.0 - Validated through 25,498 tickets across 6 years,
+  demonstrating TOIL reduction from 83.9% to 50.6% while scaling
+  team from 4 to 38 engineers.
 
 baseurl: "/FluidReliability" # Subpath of your site, e.g. /blog
 url: "https://alevm.github.io" # Base hostname

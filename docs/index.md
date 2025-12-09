@@ -1,158 +1,109 @@
 ---
 layout: default
-title: Home
+title: Fluid Reliability Framework
 ---
 
-<div class="hero">
-  <h1>The Shape of the Water</h1>
-  <p class="tagline">Fluid Reliability: An Adaptive Framework for SRE Organizational Transformation</p>
-  <p class="hero-subtitle">From Proven SRE Success to Sector-Wide Transformation</p>
-  <p style="color: #94a3b8; font-style: italic; max-width: 700px; margin: 0 auto 2rem;">This is the story of an organization that learned to reshape itself continuously, not as a reaction to change, but as its natural state.</p>
+# Fluid Reliability Framework
 
-  <div class="hero-highlights">
-    <div class="highlight">Scale proven methodologies that delivered <strong>82% MTTR improvement</strong></div>
-    <div class="highlight">Transform organizational change from <strong>business disruption to competitive advantage</strong></div>
-    <div class="highlight">Organizations can be engineered to <strong>thrive on change</strong> rather than merely survive it</div>
-  </div>
+**An Adaptive Framework for SRE Organizational Transformation**
 
-  <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-value">25,498</span>
-      <span class="stat-label">Tickets Analyzed</span>
-    </div>
-    <div class="stat">
-      <span class="stat-value">50.6%</span>
-      <span class="stat-label">TOIL Achieved</span>
-    </div>
-    <div class="stat">
-      <span class="stat-value">850%</span>
-      <span class="stat-label">Team Growth</span>
-    </div>
-    <div class="stat">
-      <span class="stat-value">6 Years</span>
-      <span class="stat-label">Validation Period</span>
-    </div>
-  </div>
-</div>
+*Version 7.0 | December 2025 | Andrea Valenti*
+
+---
 
 ## Abstract
 
-This white paper documents the evolution and validation of an SRE organizational transformation framework developed through six years of applied research (2019-2025). The framework addresses the documented SRE burnout crisis affecting 82% of technology workers through five core practices: **Structured Gatekeeping**, **Rotational Development**, **Quarterly Adaptation**, **Shared Resource Management**, and **Visibility & Culture**.
+This documentation presents an SRE organizational transformation framework developed through six years of applied research (2019-2025). The framework—titled "Fluid Reliability"—addresses the documented SRE burnout crisis through five interconnected practices: Structured Gatekeeping, Rotational Development, Quarterly Adaptation, Shared Resource Management, and Visibility & Culture.
 
-The framework is validated through comprehensive analysis of **25,498 operational tickets** spanning five years across three JIRA boards. Key outcomes include:
+The framework is validated through analysis of **25,498 operational tickets** spanning five years across three JIRA boards.
 
-<div class="metrics-grid">
-  <div class="metric-card">
-    <div class="metric-value">83.9% → 50.6%</div>
-    <div class="metric-label">TOIL Reduction</div>
-    <div class="metric-change">Beat Google's &lt;60% target</div>
-  </div>
+### Key Outcomes
 
-  <div class="metric-card">
-    <div class="metric-value">92%</div>
-    <div class="metric-label">P95 Cycle Time Reduction</div>
-    <div class="metric-change">294.6 → ~23 days</div>
-  </div>
-
-  <div class="metric-card">
-    <div class="metric-value">4 → 38</div>
-    <div class="metric-label">Engineers</div>
-    <div class="metric-change">850% growth</div>
-  </div>
-
-  <div class="metric-card">
-    <div class="metric-value">15-20%</div>
-    <div class="metric-label">Retention Advantage</div>
-    <div class="metric-change">vs. peer teams</div>
-  </div>
-</div>
+| Metric | Before | After | Change |
+|--------|--------|-------|--------|
+| TOIL Ratio | 83.9% (2023) | 50.6% (2025) | -33.3 pp |
+| P95 Cycle Time | 294.6 days | ~23 days | -92% |
+| Team Size | 4 engineers | 38 engineers | +850% |
+| Retention | Baseline | +15-20% vs peers | Sustained |
 
 ---
 
-## The Industry Crisis
+## The Problem
 
-The SRE industry faces unprecedented challenges. Recent research reveals the depth of the crisis:
+The SRE industry faces unprecedented challenges:
 
 - **82%** of employees at risk of burnout (Fortune/DHR Global 2024-2025)
-- **82%** of tech workers feel close to burnout (CharlieHR/Spill 2024)
-- **57%** of SREs spend more than half their week on TOIL despite AI tool adoption
+- **57%** of SREs spend more than half their week on TOIL despite AI adoption
 - **14%** drop in change stability when using platform engineering without cultural change (DORA 2024)
 
-Despite promises of AI automation, DORA 2024 research reveals a troubling disconnect: 67% of engineers feel more productive using AI, but software delivery throughput at organizations using AI dropped by at least 1.5%.
+Despite AI promises, DORA 2024 shows software delivery throughput dropped by 1.5% at organizations using AI tools. **Sustainable transformation requires organizational change, not just tooling.**
 
-**This paradox underscores the framework's core insight: sustainable transformation requires organizational and cultural change, not just tooling investments.**
+---
+
+## Theoretical Foundation
+
+The framework synthesizes six academic sources into three tiers:
+
+**Tier 1 — Foundation (WHY):**
+- Luhmann's semipermeable boundaries (1995)
+- Olivetti's human-centered community (1958)
+
+**Tier 2 — Learning (HOW change happens):**
+- Argyris & Schön's double-loop learning (1978)
+- Rogers' diffusion of innovation (2003)
+
+**Tier 3 — Implementation (HOW work flows):**
+- Ohno's Toyota Production System (1978)
+- Anderson's Kanban method (2010)
 
 ---
 
 ## The Five Core Practices
 
-<div class="card-grid">
-  <div class="card">
-    <h3>Structured Gatekeeping</h3>
-    <p>Shield technical teams from operational noise through structured intake processes, visual triage systems, and shared accountability models.</p>
-  </div>
+### 1. Structured Gatekeeping
+Shield technical teams from operational noise through structured intake processes and visual triage systems. Acts as Luhmann's "semipermeable membrane" for the organization.
 
-  <div class="card">
-    <h3>Rotational Development</h3>
-    <p>Develop engineers as rotationally fluent professionals through deliberate cross-pollination across teams and contexts.</p>
-  </div>
+### 2. Rotational Development
+Develop engineers as rotationally fluent professionals through deliberate cross-pollination. Prevents knowledge silos and hero culture.
 
-  <div class="card">
-    <h3>Quarterly Adaptation</h3>
-    <p>Conduct regular feedback loops assessing organizational structure alignment with business evolution.</p>
-  </div>
+### 3. Quarterly Adaptation
+Conduct regular feedback loops assessing organizational structure alignment with business evolution. Institutionalizes Argyris's double-loop learning.
 
-  <div class="card">
-    <h3>Shared Resource Management</h3>
-    <p>Maintain shared talent pools that preserve delivery capabilities while enabling temporary reassignment.</p>
-  </div>
+### 4. Shared Resource Management
+Maintain shared talent pools that preserve delivery capabilities while enabling temporary reassignment. Demonstrated 40% cost reduction vs. external consultants in FedRAMP certification.
 
-  <div class="card">
-    <h3>Visibility & Culture</h3>
-    <p>Treat organizational culture as an engineered asset through intentional identification and amplification of culture carriers.</p>
-  </div>
-</div>
+### 5. Visibility & Culture
+Treat organizational culture as an engineered asset through intentional identification and amplification of culture carriers.
 
 ---
 
-## Explore the Framework
+## Documentation
 
-<div class="card-grid">
-  <a href="{{ '/framework/philosophy/' | relative_url }}" class="card-link">
-    <div class="card">
-      <h3>The Mitochondrial Fallacy</h3>
-      <p>A philosophical foundation for adaptive organizations—why immutable structure is a false promise.</p>
-    </div>
-  </a>
-
-  <a href="{{ '/framework/' | relative_url }}" class="card-link">
-    <div class="card">
-      <h3>Framework & Theory</h3>
-      <p>Three-tier theoretical architecture: Luhmann, Olivetti, Argyris, Rogers, Ohno, Anderson.</p>
-    </div>
-  </a>
-
-  <a href="{{ '/framework/evolution/' | relative_url }}" class="card-link">
-    <div class="card">
-      <h3>Evolution & Cycles</h3>
-      <p>Three organizational cycles demonstrating framework scalability.</p>
-    </div>
-  </a>
-
-  <a href="{{ '/evidence/' | relative_url }}" class="card-link">
-    <div class="card">
-      <h3>Evidence & ROI</h3>
-      <p>Complete dataset analysis and three-tier monetary benefits model.</p>
-    </div>
-  </a>
-</div>
+- [Philosophical Foundation](/framework/philosophy/) — The Mitochondrial Fallacy and The Interregnum
+- [Framework & Theory](/framework/) — Three-tier theoretical architecture
+- [Evolution & Cycles](/framework/evolution/) — Three organizational cycles (2019-2025)
+- [Evidence & ROI](/evidence/) — Quantitative validation and monetary benefits
+- [About](/about/) — References and author information
 
 ---
 
-> *"Companies that change may survive, but companies that transform thrive."*
+## Core Insight
 
-The framework transforms change from organizational threat to competitive advantage, creating what we term **"organizational metabolism"**—the systematic ability to adapt, grow, and strengthen through environmental pressures rather than despite them.
+> "Adversity is not the opposite of reliability—it is the teacher of reliability."
+
+Organizations that cannot metabolize adversity cannot sustain reliability. The framework transforms disruption into adaptation rather than accumulated damage.
 
 ---
 
-**Version 6.8** | November 2025 | Andrea Valenti
+## Statistical Validation
+
+- **Dataset:** 25,498 tickets across 5+ years
+- **Chi-square:** χ² = 285.4, p < 0.001
+- **Effect size:** Cramér's V = 0.13 (medium)
+- **ROI:** 5.2:1 to 11.2:1 depending on confidence tier
+
+---
+
+## License
+
+This work is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
