@@ -68,7 +68,7 @@ The framework focuses on outcomes that matter, not activity metrics.
 
 ## About the Guest
 
-**Andrea Valenti** is Senior Director specializing in specializing in organizational transformation and Site Reliability Engineering (SRE). The Fluid Reliability Framework represents six years of applied research validated through 25,498 operational tickets.
+**Andrea Valenti** is a Senior Director specializing in organizational transformation and Site Reliability Engineering (SRE). The Fluid Reliability Framework represents six years of applied research validated through 25,498 operational tickets.
 
 ---
 
