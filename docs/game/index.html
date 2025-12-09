@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sisyphus & The Five Practices - Fluid Reliability Game</title>
+    <title>The Myth of Sisyphus - Fluid Reliability Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Philosopher&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,480 +12,1014 @@
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Philosopher', serif;
+            background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
-            color: #fff;
+            color: #d4af37;
+            overflow-x: hidden;
         }
+
+        /* Greek border pattern */
+        .greek-border {
+            width: 100%;
+            height: 30px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cpath d='M0 10 L10 10 L10 0 L20 0 L20 10 L30 10 L30 20 L20 20 L20 10 L10 10 L10 20 L0 20 Z' fill='%23d4af37' fill-opacity='0.3'/%3E%3C/svg%3E") repeat-x;
+            background-size: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px 20px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(212,175,55,0.1) 0%, transparent 100%);
+        }
+
         h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212,175,55,0.5);
+            letter-spacing: 4px;
             margin-bottom: 10px;
-            font-size: 1.8em;
         }
+
         .subtitle {
-            color: #888;
-            margin-bottom: 20px;
+            font-style: italic;
+            color: #8b7355;
+            font-size: 1.1em;
         }
+
         #gameContainer {
             position: relative;
-            background: #0f0f23;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            margin: 20px;
+            border: 4px solid #d4af37;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(212,175,55,0.3), inset 0 0 50px rgba(0,0,0,0.5);
+            background: #0a0a14;
         }
+
         #gameCanvas {
             display: block;
         }
-        #controls {
+
+        #hud {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
             display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .hud-item {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid #d4af37;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .hud-label {
+            font-size: 10px;
+            color: #8b7355;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hud-value {
+            font-size: 18px;
+            color: #d4af37;
+        }
+
+        #practices {
+            display: flex;
+            gap: 10px;
+            margin: 20px;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
             justify-content: center;
-            max-width: 800px;
+            max-width: 900px;
         }
-        .practice-btn {
-            padding: 10px 14px;
-            border: none;
+
+        .practice-card {
+            background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
+            border: 2px solid #8b7355;
             border-radius: 8px;
+            padding: 15px;
+            width: 160px;
+            text-align: center;
             cursor: pointer;
-            font-size: 12px;
-            font-weight: bold;
-            transition: all 0.2s;
-            color: white;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        .practice-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+        .practice-card:hover:not(.cooldown) {
+            border-color: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(212,175,55,0.3);
         }
-        .practice-btn:disabled {
+
+        .practice-card.cooldown {
             opacity: 0.5;
             cursor: not-allowed;
         }
-        .practice-btn.gatekeeping { background: #e74c3c; }
-        .practice-btn.rotation { background: #3498db; }
-        .practice-btn.adaptation { background: #2ecc71; }
-        .practice-btn.pooling { background: #9b59b6; }
-        .practice-btn.culture { background: #f39c12; }
 
-        #stats {
-            display: flex;
-            gap: 30px;
-            margin-top: 15px;
-            font-size: 14px;
-        }
-        .stat {
-            text-align: center;
-        }
-        .stat-value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #3498db;
-        }
-        #message {
+        .practice-card.cooldown::after {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.9);
-            padding: 30px 50px;
-            border-radius: 12px;
-            text-align: center;
-            display: none;
-            z-index: 100;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: #d4af37;
+            animation: cooldownBar 5s linear forwards;
         }
-        #message h2 {
-            color: #e74c3c;
-            margin-bottom: 10px;
+
+        @keyframes cooldownBar {
+            from { width: 0%; }
+            to { width: 100%; }
         }
-        #message p {
-            color: #888;
-            margin-bottom: 15px;
+
+        .practice-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
         }
-        #message .bonus {
-            color: #2ecc71;
-            font-weight: bold;
+
+        .practice-name {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            color: #d4af37;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .link-back {
-            margin-top: 20px;
-            color: #3498db;
+
+        .practice-effect {
+            font-size: 10px;
+            color: #8b7355;
         }
-        .link-back a {
-            color: #3498db;
+
+        .practice-key {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            font-size: 10px;
+            color: #555;
+            font-family: monospace;
         }
+
         #instructions {
-            background: rgba(255,255,255,0.1);
+            background: rgba(212,175,55,0.1);
+            border: 1px solid #8b7355;
             padding: 15px 25px;
             border-radius: 8px;
-            margin-bottom: 20px;
-            max-width: 800px;
-            font-size: 14px;
+            margin: 10px 20px;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        #instructions p {
+            color: #c0a060;
             line-height: 1.6;
         }
+
         #instructions strong {
-            color: #3498db;
+            color: #d4af37;
+        }
+
+        #message-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        #message-box {
+            background: linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%);
+            border: 3px solid #d4af37;
+            border-radius: 12px;
+            padding: 40px 60px;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        #message-box h2 {
+            font-family: 'Cinzel', serif;
+            color: #c0392b;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        #message-box .event-text {
+            color: #8b7355;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        #message-box .wisdom {
+            color: #d4af37;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        #message-box .stats {
+            color: #6a9955;
+            font-size: 0.9em;
+        }
+
+        .link-back {
+            margin: 20px;
+            padding-bottom: 30px;
+        }
+
+        .link-back a {
+            color: #8b7355;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .link-back a:hover {
+            color: #d4af37;
+        }
+
+        #startScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+        }
+
+        #startScreen .content {
+            text-align: center;
+            max-width: 500px;
+            padding: 40px;
+        }
+
+        #startScreen h2 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #startScreen p {
+            color: #8b7355;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        #startBtn {
+            font-family: 'Cinzel', serif;
+            background: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 15px 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            letter-spacing: 3px;
+            transition: all 0.3s;
+        }
+
+        #startBtn:hover {
+            background: #d4af37;
+            color: #0a0a14;
+        }
+
+        #victoryScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 300;
+        }
+
+        #victoryScreen .content {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        #victoryScreen h2 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #victoryScreen .quote {
+            color: #c0a060;
+            font-style: italic;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        #victoryScreen .final-stats {
+            color: #6a9955;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
-    <h1>Sisyphus & The Five Practices</h1>
-    <p class="subtitle">A Fluid Reliability Framework Game</p>
+    <div class="greek-border"></div>
 
-    <div id="instructions">
-        <strong>How to play:</strong> Help Sisyphus push the boulder uphill by clicking the practice buttons.
-        Each practice gives a speed boost. When you reach the top, a disruption will roll you back down
-        but your <strong>resilience compounds</strong> making each climb faster!
-    </div>
+    <header>
+        <h1>THE MYTH OF SISYPHUS</h1>
+        <p class="subtitle">A meditation on resilience through the Five Practices</p>
+    </header>
 
     <div id="gameContainer">
-        <canvas id="gameCanvas" width="800" height="400"></canvas>
-        <div id="message">
-            <h2 id="disruptionTitle">New Acquisition!</h2>
-            <p id="disruptionText">Cultural debt incoming...</p>
-            <p class="bonus" id="bonusText">But you're 20% faster now!</p>
+        <canvas id="gameCanvas" width="850" height="450"></canvas>
+
+        <div id="hud">
+            <div class="hud-item">
+                <div class="hud-label">Summit</div>
+                <div class="hud-value" id="summitCount">0 / 5</div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">Resilience</div>
+                <div class="hud-value" id="resilience">100%</div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">Strength</div>
+                <div class="hud-value" id="strength">1.0x</div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">Wisdom</div>
+                <div class="hud-value" id="wisdom">0</div>
+            </div>
+        </div>
+
+        <div id="startScreen">
+            <div class="content">
+                <h2>The Eternal Struggle</h2>
+                <p>
+                    The gods condemned Sisyphus to roll a boulder up a mountain for eternity.
+                    Each time he nears the summit, fate intervenes and the boulder rolls back down.
+                    <br><br>
+                    But what if Sisyphus could learn? What if each struggle made him stronger?
+                    <br><br>
+                    <strong>Hold SPACE or CLICK</strong> to push the boulder.<br>
+                    Use the <strong>Five Practices</strong> to build resilience.<br>
+                    Reach the summit <strong>5 times</strong> to achieve transcendence.
+                </p>
+                <button id="startBtn">BEGIN</button>
+            </div>
+        </div>
+
+        <div id="message-overlay">
+            <div id="message-box">
+                <h2 id="eventTitle">The Boulder Falls!</h2>
+                <p class="event-text" id="eventText">A great wind sweeps down from Olympus...</p>
+                <p class="wisdom" id="wisdomText">"One must imagine Sisyphus happy."</p>
+                <p class="stats" id="statsText">Strength increased. The climb grows easier.</p>
+            </div>
+        </div>
+
+        <div id="victoryScreen">
+            <div class="content">
+                <h2>TRANSCENDENCE</h2>
+                <p class="quote">
+                    "The struggle itself toward the heights is enough to fill a man's heart."
+                    <br>— Albert Camus
+                </p>
+                <p class="final-stats" id="finalStats">
+                    You completed 5 summits with 150% resilience.<br>
+                    The practices transformed struggle into strength.
+                </p>
+                <button id="startBtn" onclick="location.reload()">MEDITATE AGAIN</button>
+            </div>
         </div>
     </div>
 
-    <div id="controls">
-        <button class="practice-btn gatekeeping" onclick="applyPractice('gatekeeping')" id="btn-gatekeeping">
-            1. Gatekeeping (+Shield)
-        </button>
-        <button class="practice-btn rotation" onclick="applyPractice('rotation')" id="btn-rotation">
-            2. Rotation (+Speed)
-        </button>
-        <button class="practice-btn adaptation" onclick="applyPractice('adaptation')" id="btn-adaptation">
-            3. Adaptation (+Recovery)
-        </button>
-        <button class="practice-btn pooling" onclick="applyPractice('pooling')" id="btn-pooling">
-            4. Pooling (+Stamina)
-        </button>
-        <button class="practice-btn culture" onclick="applyPractice('culture')" id="btn-culture">
-            5. Culture (+Morale)
-        </button>
+    <div id="instructions">
+        <p>
+            <strong>HOLD SPACE or CLICK</strong> to push • <strong>Keys 1-5</strong> activate practices • <strong>Goal:</strong> Reach the summit 5 times
+        </p>
     </div>
 
-    <div id="stats">
-        <div class="stat">
-            <div class="stat-value" id="cycleCount">0</div>
-            <div>Cycles</div>
+    <div id="practices">
+        <div class="practice-card" id="card-1" onclick="activatePractice(0)">
+            <span class="practice-key">1</span>
+            <div class="practice-icon">🛡️</div>
+            <div class="practice-name">Gatekeeping</div>
+            <div class="practice-effect">Shield from obstacles</div>
         </div>
-        <div class="stat">
-            <div class="stat-value" id="resilience">100%</div>
-            <div>Resilience</div>
+        <div class="practice-card" id="card-2" onclick="activatePractice(1)">
+            <span class="practice-key">2</span>
+            <div class="practice-icon">🔄</div>
+            <div class="practice-name">Rotation</div>
+            <div class="practice-effect">Burst of speed</div>
         </div>
-        <div class="stat">
-            <div class="stat-value" id="speed">1.0x</div>
-            <div>Speed</div>
+        <div class="practice-card" id="card-3" onclick="activatePractice(2)">
+            <span class="practice-key">3</span>
+            <div class="practice-icon">🌊</div>
+            <div class="practice-name">Adaptation</div>
+            <div class="practice-effect">Smooth the path</div>
         </div>
-        <div class="stat">
-            <div class="stat-value" id="toilReduction">0%</div>
-            <div>TOIL Reduced</div>
+        <div class="practice-card" id="card-4" onclick="activatePractice(3)">
+            <span class="practice-key">4</span>
+            <div class="practice-icon">🤝</div>
+            <div class="practice-name">Pooling</div>
+            <div class="practice-effect">Restore stamina</div>
+        </div>
+        <div class="practice-card" id="card-5" onclick="activatePractice(4)">
+            <span class="practice-key">5</span>
+            <div class="practice-icon">✨</div>
+            <div class="practice-name">Culture</div>
+            <div class="practice-effect">Inspire perseverance</div>
         </div>
     </div>
 
-    <p class="link-back">
-        <a href="/FluidReliability/">Back to Fluid Reliability Framework</a>
-    </p>
+    <div class="link-back">
+        <a href="/FluidReliability/">← RETURN TO THE FRAMEWORK</a>
+    </div>
+
+    <div class="greek-border"></div>
 
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
-        const messageEl = document.getElementById('message');
 
         // Game state
-        let game = {
-            sisyphus: { x: 100, y: 300 },
-            boulder: { x: 130, y: 280, radius: 30 },
+        const game = {
+            started: false,
+            pushing: false,
             progress: 0,
-            speed: 1,
-            baseSpeed: 0.15,
+            velocity: 0,
+            summits: 0,
+            targetSummits: 5,
             resilience: 100,
-            cycles: 0,
-            toilReduction: 0,
+            strength: 1.0,
+            wisdom: 0,
+            baseGravity: 0.08,
+            pushPower: 0.15,
             isRollingBack: false,
-            practicesCooldown: {},
-            activePractices: [],
-            disruptions: [
-                { title: "New Acquisition!", text: "Cultural debt incoming...", color: "#e74c3c" },
-                { title: "Market Rollout Urgent!", text: "All hands on deck!", color: "#e67e22" },
-                { title: "Key Engineer Left!", text: "Knowledge silo exposed...", color: "#9b59b6" },
-                { title: "Compliance Audit!", text: "FedRAMP requirements changed!", color: "#3498db" },
-                { title: "Platform Migration!", text: "Legacy system EOL...", color: "#1abc9c" },
-                { title: "Budget Cuts!", text: "Do more with less...", color: "#e74c3c" },
-                { title: "Reorg Announced!", text: "New leadership, new priorities...", color: "#f39c12" },
-            ],
-            hillPoints: [],
-            stars: []
+            rollbackSpeed: 0,
+            shieldActive: false,
+            speedBoost: 0,
+            pathSmooth: 0,
+            staminaRegen: 0,
+            perseverance: 0,
+            stamina: 100,
+            obstacles: [],
+            particles: [],
+            practicesCooldown: [0, 0, 0, 0, 0]
         };
 
-        // Generate hill curve
-        function generateHill() {
-            game.hillPoints = [];
-            for (let x = 0; x <= canvas.width; x += 5) {
-                // Curved hill from bottom-left to top-right
-                const normalX = x / canvas.width;
-                const y = canvas.height - 50 - (normalX * 280) + Math.sin(normalX * 3) * 20;
-                game.hillPoints.push({ x, y });
+        const disruptions = [
+            { title: "New Acquisition!", text: "Foreign cultures clash with the established ways...", wisdom: "Integration requires patience." },
+            { title: "Market Urgency!", text: "The gods demand speed above all else...", wisdom: "Haste makes waste, but wisdom endures." },
+            { title: "Key Person Left!", text: "Knowledge walks out the door...", wisdom: "Systems outlast individuals." },
+            { title: "Compliance Decree!", text: "New rules descend from on high...", wisdom: "Constraints breed creativity." },
+            { title: "Budget Reduction!", text: "Resources grow scarce...", wisdom: "Efficiency emerges from scarcity." },
+            { title: "Reorganization!", text: "The landscape shifts beneath your feet...", wisdom: "Adapt or be swept away." },
+            { title: "Technical Debt!", text: "Past decisions haunt the present...", wisdom: "Every step forward is still forward." }
+        ];
+
+        // Draw mountain with Greek aesthetic
+        function drawMountain() {
+            // Sky gradient
+            const skyGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            skyGrad.addColorStop(0, '#0a0a1a');
+            skyGrad.addColorStop(0.5, '#1a1a3a');
+            skyGrad.addColorStop(1, '#2a2a4a');
+            ctx.fillStyle = skyGrad;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Stars
+            ctx.fillStyle = '#ffffff';
+            for (let i = 0; i < 80; i++) {
+                const x = (i * 73) % canvas.width;
+                const y = (i * 37) % (canvas.height * 0.6);
+                const size = (i % 3) * 0.5 + 0.5;
+                const alpha = 0.3 + Math.sin(Date.now() / 1000 + i) * 0.3;
+                ctx.globalAlpha = alpha;
+                ctx.beginPath();
+                ctx.arc(x, y, size, 0, Math.PI * 2);
+                ctx.fill();
             }
+            ctx.globalAlpha = 1;
+
+            // Moon
+            ctx.fillStyle = '#f4e4c1';
+            ctx.beginPath();
+            ctx.arc(700, 80, 40, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#0a0a1a';
+            ctx.beginPath();
+            ctx.arc(715, 70, 35, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Mountain
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height);
+            ctx.lineTo(0, canvas.height - 50);
+
+            // Create curved mountain path
+            for (let x = 0; x <= canvas.width; x += 10) {
+                const progress = x / canvas.width;
+                const baseY = canvas.height - 50 - (progress * 320);
+                const curve = Math.sin(progress * Math.PI * 0.8) * 30;
+                const roughness = Math.sin(x * 0.05) * 5;
+                ctx.lineTo(x, baseY + curve + roughness - game.pathSmooth * 10);
+            }
+
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.closePath();
+
+            const mountGrad = ctx.createLinearGradient(0, canvas.height - 350, 0, canvas.height);
+            mountGrad.addColorStop(0, '#4a4a6a');
+            mountGrad.addColorStop(0.5, '#3a3a5a');
+            mountGrad.addColorStop(1, '#2a2a4a');
+            ctx.fillStyle = mountGrad;
+            ctx.fill();
+
+            // Mountain outline
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Greek temple at summit
+            const templeX = canvas.width - 80;
+            const templeY = getGroundY(0.95) - 50;
+
+            ctx.fillStyle = '#d4af37';
+            ctx.globalAlpha = 0.8;
+
+            // Columns
+            for (let i = 0; i < 4; i++) {
+                ctx.fillRect(templeX + i * 15, templeY, 5, 40);
+            }
+            // Roof
+            ctx.beginPath();
+            ctx.moveTo(templeX - 10, templeY);
+            ctx.lineTo(templeX + 32, templeY - 25);
+            ctx.lineTo(templeX + 75, templeY);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.globalAlpha = 1;
         }
 
-        // Generate stars
-        function generateStars() {
-            game.stars = [];
-            for (let i = 0; i < 50; i++) {
-                game.stars.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height * 0.6,
-                    size: Math.random() * 2,
-                    twinkle: Math.random()
+        function getGroundY(progress) {
+            const baseY = canvas.height - 50 - (progress * 320);
+            const curve = Math.sin(progress * Math.PI * 0.8) * 30;
+            return baseY + curve - game.pathSmooth * 10;
+        }
+
+        function drawSisyphus() {
+            const x = 80 + game.progress * (canvas.width - 180);
+            const groundY = getGroundY(game.progress);
+
+            // Calculate angle based on slope
+            const nextY = getGroundY(game.progress + 0.01);
+            const angle = Math.atan2(groundY - nextY, 10);
+
+            ctx.save();
+            ctx.translate(x, groundY);
+            ctx.rotate(-angle * 0.3);
+
+            // Shadow
+            ctx.fillStyle = 'rgba(0,0,0,0.3)';
+            ctx.beginPath();
+            ctx.ellipse(0, 5, 20, 5, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Body (more detailed figure)
+            ctx.fillStyle = '#c9a86c';
+            ctx.strokeStyle = '#8b7355';
+            ctx.lineWidth = 2;
+
+            // Legs
+            const walkCycle = game.pushing ? Math.sin(Date.now() / 100) * 5 : 0;
+            ctx.beginPath();
+            ctx.moveTo(-5, -20);
+            ctx.lineTo(-10 + walkCycle, 0);
+            ctx.moveTo(5, -20);
+            ctx.lineTo(10 - walkCycle, 0);
+            ctx.strokeStyle = '#c9a86c';
+            ctx.lineWidth = 6;
+            ctx.stroke();
+
+            // Torso
+            ctx.fillStyle = '#c9a86c';
+            ctx.beginPath();
+            ctx.ellipse(0, -35, 12, 18, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Head
+            ctx.beginPath();
+            ctx.arc(0, -60, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#8b7355';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // Hair/beard
+            ctx.fillStyle = '#5a5a5a';
+            ctx.beginPath();
+            ctx.arc(0, -60, 10, 0.8, 2.3);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(5, -55);
+            ctx.quadraticCurveTo(12, -48, 8, -40);
+            ctx.fill();
+
+            // Arms pushing
+            ctx.strokeStyle = '#c9a86c';
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            const armExtend = game.pushing ? 5 : 0;
+            ctx.moveTo(8, -40);
+            ctx.lineTo(30 + armExtend, -35);
+            ctx.moveTo(8, -30);
+            ctx.lineTo(30 + armExtend, -28);
+            ctx.stroke();
+
+            // Strain effect when pushing
+            if (game.pushing) {
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.3)';
+                ctx.beginPath();
+                ctx.arc(0, -35, 25 + Math.sin(Date.now() / 50) * 5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Shield effect
+            if (game.shieldActive) {
+                ctx.strokeStyle = '#d4af37';
+                ctx.lineWidth = 3;
+                ctx.globalAlpha = 0.5 + Math.sin(Date.now() / 100) * 0.3;
+                ctx.beginPath();
+                ctx.arc(20, -30, 50, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.globalAlpha = 1;
+            }
+
+            ctx.restore();
+        }
+
+        function drawBoulder() {
+            const x = 120 + game.progress * (canvas.width - 180);
+            const groundY = getGroundY(game.progress);
+            const radius = 35;
+
+            // Boulder shadow
+            ctx.fillStyle = 'rgba(0,0,0,0.4)';
+            ctx.beginPath();
+            ctx.ellipse(x + 5, groundY + 5, radius, radius * 0.3, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Boulder
+            const boulderGrad = ctx.createRadialGradient(x - 10, groundY - radius - 15, 0, x, groundY - radius, radius);
+            boulderGrad.addColorStop(0, '#8a8a8a');
+            boulderGrad.addColorStop(0.7, '#5a5a5a');
+            boulderGrad.addColorStop(1, '#3a3a3a');
+
+            ctx.fillStyle = boulderGrad;
+            ctx.beginPath();
+            ctx.arc(x, groundY - radius, radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Boulder texture
+            ctx.strokeStyle = '#4a4a4a';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(x - 15, groundY - radius - 10);
+            ctx.quadraticCurveTo(x, groundY - radius + 5, x + 20, groundY - radius - 15);
+            ctx.moveTo(x - 10, groundY - radius + 10);
+            ctx.lineTo(x + 5, groundY - radius + 15);
+            ctx.stroke();
+
+            // Rolling rotation indicator
+            const rotation = game.progress * Math.PI * 8;
+            ctx.save();
+            ctx.translate(x, groundY - radius);
+            ctx.rotate(rotation);
+            ctx.strokeStyle = '#6a6a6a';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(-15, 0);
+            ctx.lineTo(15, 0);
+            ctx.moveTo(0, -15);
+            ctx.lineTo(0, 15);
+            ctx.stroke();
+            ctx.restore();
+
+            // Boulder outline
+            ctx.strokeStyle = '#2a2a2a';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(x, groundY - radius, radius, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        function drawParticles() {
+            game.particles = game.particles.filter(p => p.life > 0);
+            game.particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.1;
+                p.life -= 2;
+
+                ctx.fillStyle = `rgba(212, 175, 55, ${p.life / 100})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function addParticles(x, y, count, color) {
+            for (let i = 0; i < count; i++) {
+                game.particles.push({
+                    x: x,
+                    y: y,
+                    vx: (Math.random() - 0.5) * 6,
+                    vy: (Math.random() - 0.5) * 6 - 2,
+                    size: Math.random() * 3 + 1,
+                    life: 100,
+                    color: color
                 });
             }
         }
 
-        // Get Y position on hill for given progress (0-1)
-        function getHillY(progress) {
-            const x = progress * canvas.width;
-            const normalX = progress;
-            return canvas.height - 50 - (normalX * 280) + Math.sin(normalX * 3) * 20;
-        }
+        function drawProgressBar() {
+            const barX = 50;
+            const barY = canvas.height - 25;
+            const barWidth = canvas.width - 100;
+            const barHeight = 10;
 
-        // Apply a practice
-        function applyPractice(practice) {
-            if (game.practicesCooldown[practice] > 0) return;
+            // Background
+            ctx.fillStyle = 'rgba(0,0,0,0.5)';
+            ctx.fillRect(barX, barY, barWidth, barHeight);
 
-            const boosts = {
-                gatekeeping: { speed: 0.3, resilience: 5, toil: 2, duration: 3000, color: '#e74c3c' },
-                rotation: { speed: 0.5, resilience: 3, toil: 3, duration: 2500, color: '#3498db' },
-                adaptation: { speed: 0.2, resilience: 10, toil: 4, duration: 4000, color: '#2ecc71' },
-                pooling: { speed: 0.4, resilience: 7, toil: 2, duration: 3500, color: '#9b59b6' },
-                culture: { speed: 0.35, resilience: 8, toil: 3, duration: 3000, color: '#f39c12' }
-            };
+            // Progress
+            const progWidth = game.progress * barWidth;
+            const progGrad = ctx.createLinearGradient(barX, barY, barX + barWidth, barY);
+            progGrad.addColorStop(0, '#8b7355');
+            progGrad.addColorStop(1, '#d4af37');
+            ctx.fillStyle = progGrad;
+            ctx.fillRect(barX, barY, progWidth, barHeight);
 
-            const boost = boosts[practice];
-            game.speed += boost.speed;
-            game.resilience = Math.min(150, game.resilience + boost.resilience);
-            game.toilReduction = Math.min(50, game.toilReduction + boost.toil);
+            // Border
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(barX, barY, barWidth, barHeight);
 
-            game.activePractices.push({ name: practice, color: boost.color, endTime: Date.now() + boost.duration });
-            game.practicesCooldown[practice] = 5000;
-
-            document.getElementById(`btn-${practice}`).disabled = true;
-            setTimeout(() => {
-                document.getElementById(`btn-${practice}`).disabled = false;
-                game.practicesCooldown[practice] = 0;
-            }, 5000);
-
-            updateStats();
-        }
-
-        // Show disruption message
-        function showDisruption() {
-            const disruption = game.disruptions[Math.floor(Math.random() * game.disruptions.length)];
-            const speedBonus = Math.round((game.speed - 1) * 100);
-
-            document.getElementById('disruptionTitle').textContent = disruption.title;
-            document.getElementById('disruptionTitle').style.color = disruption.color;
-            document.getElementById('disruptionText').textContent = disruption.text;
-            document.getElementById('bonusText').textContent = `But you're ${speedBonus}% faster now! (Resilience: ${Math.round(game.resilience)}%)`;
-
-            messageEl.style.display = 'block';
-
-            setTimeout(() => {
-                messageEl.style.display = 'none';
-                game.isRollingBack = true;
-            }, 2500);
-        }
-
-        // Update stats display
-        function updateStats() {
-            document.getElementById('cycleCount').textContent = game.cycles;
-            document.getElementById('resilience').textContent = Math.round(game.resilience) + '%';
-            document.getElementById('speed').textContent = game.speed.toFixed(1) + 'x';
-            document.getElementById('toilReduction').textContent = Math.round(game.toilReduction) + '%';
-        }
-
-        // Draw everything
-        function draw() {
-            // Clear canvas
-            ctx.fillStyle = '#0f0f23';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Draw stars
-            game.stars.forEach(star => {
-                const twinkle = 0.5 + Math.sin(Date.now() / 500 + star.twinkle * 10) * 0.5;
-                ctx.fillStyle = `rgba(255, 255, 255, ${twinkle})`;
+            // Summit markers
+            for (let i = 0; i < game.summits; i++) {
+                ctx.fillStyle = '#d4af37';
                 ctx.beginPath();
-                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.arc(barX + barWidth - 5, barY - 10 - i * 12, 4, 0, Math.PI * 2);
                 ctx.fill();
-            });
+            }
+        }
 
-            // Draw hill
-            ctx.beginPath();
-            ctx.moveTo(0, canvas.height);
-            game.hillPoints.forEach(p => ctx.lineTo(p.x, p.y));
-            ctx.lineTo(canvas.width, canvas.height);
-            ctx.closePath();
+        function drawStaminaBar() {
+            const barX = canvas.width - 120;
+            const barY = 70;
+            const barWidth = 100;
+            const barHeight = 8;
 
-            const gradient = ctx.createLinearGradient(0, canvas.height - 300, 0, canvas.height);
-            gradient.addColorStop(0, '#2d3436');
-            gradient.addColorStop(1, '#636e72');
-            ctx.fillStyle = gradient;
-            ctx.fill();
+            ctx.fillStyle = 'rgba(0,0,0,0.5)';
+            ctx.fillRect(barX, barY, barWidth, barHeight);
 
-            // Draw hill surface line
-            ctx.beginPath();
-            game.hillPoints.forEach((p, i) => {
-                if (i === 0) ctx.moveTo(p.x, p.y);
-                else ctx.lineTo(p.x, p.y);
-            });
-            ctx.strokeStyle = '#74b9ff';
-            ctx.lineWidth = 3;
-            ctx.stroke();
+            const staminaColor = game.stamina > 30 ? '#6a9955' : '#c0392b';
+            ctx.fillStyle = staminaColor;
+            ctx.fillRect(barX, barY, (game.stamina / 100) * barWidth, barHeight);
 
-            // Calculate positions based on progress
-            const boulderX = 100 + game.progress * (canvas.width - 200);
-            const boulderY = getHillY(game.progress) - game.boulder.radius;
-            const sisyphusX = boulderX - 40;
-            const sisyphusY = getHillY(game.progress);
+            ctx.strokeStyle = '#8b7355';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(barX, barY, barWidth, barHeight);
 
-            // Draw active practice effects
-            game.activePractices = game.activePractices.filter(p => Date.now() < p.endTime);
-            game.activePractices.forEach(p => {
-                ctx.beginPath();
-                ctx.arc(boulderX, boulderY, game.boulder.radius + 15, 0, Math.PI * 2);
-                ctx.strokeStyle = p.color;
-                ctx.lineWidth = 3;
-                ctx.globalAlpha = 0.5 + Math.sin(Date.now() / 100) * 0.3;
-                ctx.stroke();
-                ctx.globalAlpha = 1;
-            });
+            ctx.fillStyle = '#8b7355';
+            ctx.font = '10px Philosopher';
+            ctx.fillText('STAMINA', barX, barY - 3);
+        }
 
-            // Draw boulder
-            const boulderGradient = ctx.createRadialGradient(boulderX - 10, boulderY - 10, 0, boulderX, boulderY, game.boulder.radius);
-            boulderGradient.addColorStop(0, '#a0a0a0');
-            boulderGradient.addColorStop(1, '#505050');
-            ctx.beginPath();
-            ctx.arc(boulderX, boulderY, game.boulder.radius, 0, Math.PI * 2);
-            ctx.fillStyle = boulderGradient;
-            ctx.fill();
-            ctx.strokeStyle = '#303030';
-            ctx.lineWidth = 2;
-            ctx.stroke();
+        function update() {
+            if (!game.started) return;
 
-            // Draw boulder cracks
-            ctx.beginPath();
-            ctx.moveTo(boulderX - 15, boulderY - 10);
-            ctx.lineTo(boulderX - 5, boulderY + 5);
-            ctx.lineTo(boulderX + 10, boulderY - 5);
-            ctx.strokeStyle = '#404040';
-            ctx.lineWidth = 2;
-            ctx.stroke();
-
-            // Draw Sisyphus (stick figure)
-            const angle = Math.atan2(boulderY - sisyphusY, boulderX - sisyphusX);
-            ctx.save();
-            ctx.translate(sisyphusX, sisyphusY);
-
-            // Body
-            ctx.strokeStyle = '#ffeaa7';
-            ctx.lineWidth = 3;
-            ctx.lineCap = 'round';
-
-            // Head
-            ctx.beginPath();
-            ctx.arc(0, -50, 10, 0, Math.PI * 2);
-            ctx.stroke();
-
-            // Body
-            ctx.beginPath();
-            ctx.moveTo(0, -40);
-            ctx.lineTo(0, -10);
-            ctx.stroke();
-
-            // Legs
-            ctx.beginPath();
-            ctx.moveTo(0, -10);
-            ctx.lineTo(-12, 0);
-            ctx.moveTo(0, -10);
-            ctx.lineTo(8, 0);
-            ctx.stroke();
-
-            // Arms pushing
-            ctx.beginPath();
-            ctx.moveTo(0, -35);
-            ctx.lineTo(25, -30);
-            ctx.moveTo(0, -30);
-            ctx.lineTo(25, -25);
-            ctx.stroke();
-
-            ctx.restore();
-
-            // Draw progress bar
-            ctx.fillStyle = '#2d3436';
-            ctx.fillRect(50, 20, canvas.width - 100, 20);
-
-            const progressColor = game.isRollingBack ? '#e74c3c' : '#00b894';
-            ctx.fillStyle = progressColor;
-            ctx.fillRect(50, 20, (canvas.width - 100) * game.progress, 20);
-
-            ctx.strokeStyle = '#74b9ff';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(50, 20, canvas.width - 100, 20);
-
-            // Draw cycle markers
-            if (game.cycles > 0) {
-                ctx.fillStyle = '#fff';
-                ctx.font = '12px sans-serif';
-                ctx.textAlign = 'right';
-                ctx.fillText(`Cycle ${game.cycles + 1}`, canvas.width - 55, 35);
+            // Stamina regeneration
+            if (!game.pushing) {
+                game.stamina = Math.min(100, game.stamina + 0.3 + game.staminaRegen * 0.2);
             }
 
-            // Draw "TOP" marker
-            ctx.fillStyle = '#ffeaa7';
-            ctx.font = 'bold 14px sans-serif';
-            ctx.textAlign = 'center';
-            ctx.fillText('TOP', canvas.width - 80, 55);
-        }
+            // Speed boost decay
+            if (game.speedBoost > 0) game.speedBoost -= 0.01;
+            if (game.shieldActive && Date.now() > game.shieldEnd) game.shieldActive = false;
+            if (game.pathSmooth > 0) game.pathSmooth -= 0.005;
+            if (game.staminaRegen > 0) game.staminaRegen -= 0.005;
+            if (game.perseverance > 0) game.perseverance -= 0.003;
 
-        // Game loop
-        function update() {
-            if (!game.isRollingBack && messageEl.style.display !== 'block') {
-                // Moving up
-                game.progress += game.baseSpeed * game.speed * 0.01;
-
-                if (game.progress >= 1) {
-                    game.progress = 1;
-                    game.cycles++;
-                    game.speed += 0.2; // Permanent speed boost
-                    game.baseSpeed += 0.02; // Gets faster each cycle
-                    showDisruption();
-                }
-            } else if (game.isRollingBack) {
-                // Rolling back
-                game.progress -= 0.02;
+            if (game.isRollingBack) {
+                game.rollbackSpeed += 0.002;
+                game.progress -= game.rollbackSpeed;
 
                 if (game.progress <= 0) {
                     game.progress = 0;
                     game.isRollingBack = false;
+                    game.rollbackSpeed = 0;
+                    game.strength += 0.1 + game.wisdom * 0.02;
                 }
+            } else if (game.pushing && game.stamina > 0) {
+                // Pushing physics
+                const pushForce = game.pushPower * game.strength * (1 + game.speedBoost) * (1 + game.perseverance * 0.5);
+                const gravity = game.baseGravity * (1 - game.progress * 0.3); // Steeper at top
+
+                game.velocity += pushForce - gravity;
+                game.velocity *= 0.95; // Friction
+                game.progress += game.velocity * 0.1;
+                game.stamina -= 0.5;
+
+                // Dust particles when pushing
+                if (Math.random() < 0.3) {
+                    const x = 80 + game.progress * (canvas.width - 180);
+                    const y = getGroundY(game.progress);
+                    addParticles(x - 10, y, 1, '#8b7355');
+                }
+            } else {
+                // Sliding back
+                const gravity = game.baseGravity * 0.5 * (1 - game.progress * 0.2);
+                game.velocity -= gravity;
+                game.velocity *= 0.98;
+                game.progress += game.velocity * 0.1;
             }
 
-            updateStats();
-            draw();
-            requestAnimationFrame(update);
+            // Clamp progress
+            game.progress = Math.max(0, Math.min(1, game.progress));
+
+            // Check summit
+            if (game.progress >= 0.98 && !game.isRollingBack) {
+                reachSummit();
+            }
+
+            // Update UI
+            updateHUD();
         }
 
-        // Initialize
-        generateHill();
-        generateStars();
-        updateStats();
-        update();
+        function reachSummit() {
+            game.summits++;
+            game.wisdom += 10 + game.summits * 5;
+            game.resilience = Math.min(200, game.resilience + 10);
 
-        // Make applyPractice available globally
-        window.applyPractice = applyPractice;
+            if (game.summits >= game.targetSummits) {
+                showVictory();
+                return;
+            }
+
+            // Show disruption
+            const disruption = disruptions[Math.floor(Math.random() * disruptions.length)];
+            showDisruption(disruption);
+
+            game.isRollingBack = true;
+            game.rollbackSpeed = 0.01;
+
+            // Particles at summit
+            addParticles(canvas.width - 80, getGroundY(0.95), 30, '#d4af37');
+        }
+
+        function showDisruption(disruption) {
+            document.getElementById('eventTitle').textContent = disruption.title;
+            document.getElementById('eventText').textContent = disruption.text;
+            document.getElementById('wisdomText').textContent = `"${disruption.wisdom}"`;
+            document.getElementById('statsText').textContent =
+                `Strength: ${game.strength.toFixed(1)}x (+0.1) • Wisdom: ${game.wisdom} (+${10 + game.summits * 5})`;
+
+            document.getElementById('message-overlay').style.display = 'flex';
+
+            setTimeout(() => {
+                document.getElementById('message-overlay').style.display = 'none';
+            }, 3000);
+        }
+
+        function showVictory() {
+            game.started = false;
+            document.getElementById('finalStats').innerHTML =
+                `Summits: ${game.summits} • Final Strength: ${game.strength.toFixed(1)}x<br>
+                Wisdom Gained: ${game.wisdom} • Resilience: ${Math.round(game.resilience)}%`;
+            document.getElementById('victoryScreen').style.display = 'flex';
+        }
+
+        function updateHUD() {
+            document.getElementById('summitCount').textContent = `${game.summits} / ${game.targetSummits}`;
+            document.getElementById('resilience').textContent = `${Math.round(game.resilience)}%`;
+            document.getElementById('strength').textContent = `${game.strength.toFixed(1)}x`;
+            document.getElementById('wisdom').textContent = game.wisdom;
+        }
+
+        function activatePractice(index) {
+            if (game.practicesCooldown[index] > 0 || !game.started) return;
+
+            const card = document.getElementById(`card-${index + 1}`);
+            card.classList.add('cooldown');
+            game.practicesCooldown[index] = 5000;
+
+            const x = 120 + game.progress * (canvas.width - 180);
+            const y = getGroundY(game.progress) - 35;
+            addParticles(x, y, 20, '#d4af37');
+
+            switch(index) {
+                case 0: // Gatekeeping - Shield
+                    game.shieldActive = true;
+                    game.shieldEnd = Date.now() + 4000;
+                    game.resilience += 5;
+                    break;
+                case 1: // Rotation - Speed burst
+                    game.speedBoost = 1.5;
+                    game.wisdom += 5;
+                    break;
+                case 2: // Adaptation - Smooth path
+                    game.pathSmooth = 2;
+                    game.wisdom += 5;
+                    break;
+                case 3: // Pooling - Restore stamina
+                    game.stamina = 100;
+                    game.staminaRegen = 2;
+                    break;
+                case 4: // Culture - Perseverance
+                    game.perseverance = 2;
+                    game.resilience += 3;
+                    game.wisdom += 5;
+                    break;
+            }
+
+            setTimeout(() => {
+                card.classList.remove('cooldown');
+                game.practicesCooldown[index] = 0;
+            }, 5000);
+        }
+
+        function draw() {
+            drawMountain();
+            drawParticles();
+            drawBoulder();
+            drawSisyphus();
+            drawProgressBar();
+            drawStaminaBar();
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Event listeners
+        document.getElementById('startBtn').addEventListener('click', () => {
+            document.getElementById('startScreen').style.display = 'none';
+            game.started = true;
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                game.pushing = true;
+            }
+            if (e.key >= '1' && e.key <= '5') {
+                activatePractice(parseInt(e.key) - 1);
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if (e.code === 'Space') {
+                game.pushing = false;
+            }
+        });
+
+        canvas.addEventListener('mousedown', () => game.pushing = true);
+        canvas.addEventListener('mouseup', () => game.pushing = false);
+        canvas.addEventListener('mouseleave', () => game.pushing = false);
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); game.pushing = true; });
+        canvas.addEventListener('touchend', () => game.pushing = false);
+
+        // Make activatePractice global
+        window.activatePractice = activatePractice;
+
+        // Start game loop
+        gameLoop();
     </script>
 </body>
 </html>

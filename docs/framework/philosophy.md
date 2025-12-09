@@ -9,9 +9,6 @@ permalink: /framework/philosophy/
 
 *A Philosophical Foundation for Adaptive Organizations*
 
-> "Stability belongs to the dead. The living are characterized by change."
-> — Adapted from Heraclitus
-
 ---
 
 ## The False Promise of Immutable Structure
