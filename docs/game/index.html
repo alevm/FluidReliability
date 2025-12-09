@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisyphus & The Five Practices - Fluid Reliability Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+        h1 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        #gameContainer {
+            position: relative;
+            background: #0f0f23;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        #gameCanvas {
+            display: block;
+        }
+        #controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+            justify-content: center;
+            max-width: 800px;
+        }
+        .practice-btn {
+            padding: 10px 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.2s;
+            color: white;
+        }
+        .practice-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .practice-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .practice-btn.gatekeeping { background: #e74c3c; }
+        .practice-btn.rotation { background: #3498db; }
+        .practice-btn.adaptation { background: #2ecc71; }
+        .practice-btn.pooling { background: #9b59b6; }
+        .practice-btn.culture { background: #f39c12; }
+
+        #stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+        }
+        #message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
+            padding: 30px 50px;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+            z-index: 100;
+        }
+        #message h2 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        #message p {
+            color: #888;
+            margin-bottom: 15px;
+        }
+        #message .bonus {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .link-back {
+            margin-top: 20px;
+            color: #3498db;
+        }
+        .link-back a {
+            color: #3498db;
+        }
+        #instructions {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            max-width: 800px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        #instructions strong {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sisyphus & The Five Practices</h1>
+    <p class="subtitle">A Fluid Reliability Framework Game</p>
+
+    <div id="instructions">
+        <strong>How to play:</strong> Help Sisyphus push the boulder uphill by clicking the practice buttons.
+        Each practice gives a speed boost. When you reach the top, a disruption will roll you back down
+        but your <strong>resilience compounds</strong> making each climb faster!
+    </div>
+
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div id="message">
+            <h2 id="disruptionTitle">New Acquisition!</h2>
+            <p id="disruptionText">Cultural debt incoming...</p>
+            <p class="bonus" id="bonusText">But you're 20% faster now!</p>
+        </div>
+    </div>
+
+    <div id="controls">
+        <button class="practice-btn gatekeeping" onclick="applyPractice('gatekeeping')" id="btn-gatekeeping">
+            1. Gatekeeping (+Shield)
+        </button>
+        <button class="practice-btn rotation" onclick="applyPractice('rotation')" id="btn-rotation">
+            2. Rotation (+Speed)
+        </button>
+        <button class="practice-btn adaptation" onclick="applyPractice('adaptation')" id="btn-adaptation">
+            3. Adaptation (+Recovery)
+        </button>
+        <button class="practice-btn pooling" onclick="applyPractice('pooling')" id="btn-pooling">
+            4. Pooling (+Stamina)
+        </button>
+        <button class="practice-btn culture" onclick="applyPractice('culture')" id="btn-culture">
+            5. Culture (+Morale)
+        </button>
+    </div>
+
+    <div id="stats">
+        <div class="stat">
+            <div class="stat-value" id="cycleCount">0</div>
+            <div>Cycles</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="resilience">100%</div>
+            <div>Resilience</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="speed">1.0x</div>
+            <div>Speed</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="toilReduction">0%</div>
+            <div>TOIL Reduced</div>
+        </div>
+    </div>
+
+    <p class="link-back">
+        <a href="/FluidReliability/">Back to Fluid Reliability Framework</a>
+    </p>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const messageEl = document.getElementById('message');
+
+        // Game state
+        let game = {
+            sisyphus: { x: 100, y: 300 },
+            boulder: { x: 130, y: 280, radius: 30 },
+            progress: 0,
+            speed: 1,
+            baseSpeed: 0.15,
+            resilience: 100,
+            cycles: 0,
+            toilReduction: 0,
+            isRollingBack: false,
+            practicesCooldown: {},
+            activePractices: [],
+            disruptions: [
+                { title: "New Acquisition!", text: "Cultural debt incoming...", color: "#e74c3c" },
+                { title: "Market Rollout Urgent!", text: "All hands on deck!", color: "#e67e22" },
+                { title: "Key Engineer Left!", text: "Knowledge silo exposed...", color: "#9b59b6" },
+                { title: "Compliance Audit!", text: "FedRAMP requirements changed!", color: "#3498db" },
+                { title: "Platform Migration!", text: "Legacy system EOL...", color: "#1abc9c" },
+                { title: "Budget Cuts!", text: "Do more with less...", color: "#e74c3c" },
+                { title: "Reorg Announced!", text: "New leadership, new priorities...", color: "#f39c12" },
+            ],
+            hillPoints: [],
+            stars: []
+        };
+
+        // Generate hill curve
+        function generateHill() {
+            game.hillPoints = [];
+            for (let x = 0; x <= canvas.width; x += 5) {
+                // Curved hill from bottom-left to top-right
+                const normalX = x / canvas.width;
+                const y = canvas.height - 50 - (normalX * 280) + Math.sin(normalX * 3) * 20;
+                game.hillPoints.push({ x, y });
+            }
+        }
+
+        // Generate stars
+        function generateStars() {
+            game.stars = [];
+            for (let i = 0; i < 50; i++) {
+                game.stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height * 0.6,
+                    size: Math.random() * 2,
+                    twinkle: Math.random()
+                });
+            }
+        }
+
+        // Get Y position on hill for given progress (0-1)
+        function getHillY(progress) {
+            const x = progress * canvas.width;
+            const normalX = progress;
+            return canvas.height - 50 - (normalX * 280) + Math.sin(normalX * 3) * 20;
+        }
+
+        // Apply a practice
+        function applyPractice(practice) {
+            if (game.practicesCooldown[practice] > 0) return;
+
+            const boosts = {
+                gatekeeping: { speed: 0.3, resilience: 5, toil: 2, duration: 3000, color: '#e74c3c' },
+                rotation: { speed: 0.5, resilience: 3, toil: 3, duration: 2500, color: '#3498db' },
+                adaptation: { speed: 0.2, resilience: 10, toil: 4, duration: 4000, color: '#2ecc71' },
+                pooling: { speed: 0.4, resilience: 7, toil: 2, duration: 3500, color: '#9b59b6' },
+                culture: { speed: 0.35, resilience: 8, toil: 3, duration: 3000, color: '#f39c12' }
+            };
+
+            const boost = boosts[practice];
+            game.speed += boost.speed;
+            game.resilience = Math.min(150, game.resilience + boost.resilience);
+            game.toilReduction = Math.min(50, game.toilReduction + boost.toil);
+
+            game.activePractices.push({ name: practice, color: boost.color, endTime: Date.now() + boost.duration });
+            game.practicesCooldown[practice] = 5000;
+
+            document.getElementById(`btn-${practice}`).disabled = true;
+            setTimeout(() => {
+                document.getElementById(`btn-${practice}`).disabled = false;
+                game.practicesCooldown[practice] = 0;
+            }, 5000);
+
+            updateStats();
+        }
+
+        // Show disruption message
+        function showDisruption() {
+            const disruption = game.disruptions[Math.floor(Math.random() * game.disruptions.length)];
+            const speedBonus = Math.round((game.speed - 1) * 100);
+
+            document.getElementById('disruptionTitle').textContent = disruption.title;
+            document.getElementById('disruptionTitle').style.color = disruption.color;
+            document.getElementById('disruptionText').textContent = disruption.text;
+            document.getElementById('bonusText').textContent = `But you're ${speedBonus}% faster now! (Resilience: ${Math.round(game.resilience)}%)`;
+
+            messageEl.style.display = 'block';
+
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+                game.isRollingBack = true;
+            }, 2500);
+        }
+
+        // Update stats display
+        function updateStats() {
+            document.getElementById('cycleCount').textContent = game.cycles;
+            document.getElementById('resilience').textContent = Math.round(game.resilience) + '%';
+            document.getElementById('speed').textContent = game.speed.toFixed(1) + 'x';
+            document.getElementById('toilReduction').textContent = Math.round(game.toilReduction) + '%';
+        }
+
+        // Draw everything
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#0f0f23';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw stars
+            game.stars.forEach(star => {
+                const twinkle = 0.5 + Math.sin(Date.now() / 500 + star.twinkle * 10) * 0.5;
+                ctx.fillStyle = `rgba(255, 255, 255, ${twinkle})`;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // Draw hill
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height);
+            game.hillPoints.forEach(p => ctx.lineTo(p.x, p.y));
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.closePath();
+
+            const gradient = ctx.createLinearGradient(0, canvas.height - 300, 0, canvas.height);
+            gradient.addColorStop(0, '#2d3436');
+            gradient.addColorStop(1, '#636e72');
+            ctx.fillStyle = gradient;
+            ctx.fill();
+
+            // Draw hill surface line
+            ctx.beginPath();
+            game.hillPoints.forEach((p, i) => {
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            });
+            ctx.strokeStyle = '#74b9ff';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Calculate positions based on progress
+            const boulderX = 100 + game.progress * (canvas.width - 200);
+            const boulderY = getHillY(game.progress) - game.boulder.radius;
+            const sisyphusX = boulderX - 40;
+            const sisyphusY = getHillY(game.progress);
+
+            // Draw active practice effects
+            game.activePractices = game.activePractices.filter(p => Date.now() < p.endTime);
+            game.activePractices.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(boulderX, boulderY, game.boulder.radius + 15, 0, Math.PI * 2);
+                ctx.strokeStyle = p.color;
+                ctx.lineWidth = 3;
+                ctx.globalAlpha = 0.5 + Math.sin(Date.now() / 100) * 0.3;
+                ctx.stroke();
+                ctx.globalAlpha = 1;
+            });
+
+            // Draw boulder
+            const boulderGradient = ctx.createRadialGradient(boulderX - 10, boulderY - 10, 0, boulderX, boulderY, game.boulder.radius);
+            boulderGradient.addColorStop(0, '#a0a0a0');
+            boulderGradient.addColorStop(1, '#505050');
+            ctx.beginPath();
+            ctx.arc(boulderX, boulderY, game.boulder.radius, 0, Math.PI * 2);
+            ctx.fillStyle = boulderGradient;
+            ctx.fill();
+            ctx.strokeStyle = '#303030';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw boulder cracks
+            ctx.beginPath();
+            ctx.moveTo(boulderX - 15, boulderY - 10);
+            ctx.lineTo(boulderX - 5, boulderY + 5);
+            ctx.lineTo(boulderX + 10, boulderY - 5);
+            ctx.strokeStyle = '#404040';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw Sisyphus (stick figure)
+            const angle = Math.atan2(boulderY - sisyphusY, boulderX - sisyphusX);
+            ctx.save();
+            ctx.translate(sisyphusX, sisyphusY);
+
+            // Body
+            ctx.strokeStyle = '#ffeaa7';
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+
+            // Head
+            ctx.beginPath();
+            ctx.arc(0, -50, 10, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Body
+            ctx.beginPath();
+            ctx.moveTo(0, -40);
+            ctx.lineTo(0, -10);
+            ctx.stroke();
+
+            // Legs
+            ctx.beginPath();
+            ctx.moveTo(0, -10);
+            ctx.lineTo(-12, 0);
+            ctx.moveTo(0, -10);
+            ctx.lineTo(8, 0);
+            ctx.stroke();
+
+            // Arms pushing
+            ctx.beginPath();
+            ctx.moveTo(0, -35);
+            ctx.lineTo(25, -30);
+            ctx.moveTo(0, -30);
+            ctx.lineTo(25, -25);
+            ctx.stroke();
+
+            ctx.restore();
+
+            // Draw progress bar
+            ctx.fillStyle = '#2d3436';
+            ctx.fillRect(50, 20, canvas.width - 100, 20);
+
+            const progressColor = game.isRollingBack ? '#e74c3c' : '#00b894';
+            ctx.fillStyle = progressColor;
+            ctx.fillRect(50, 20, (canvas.width - 100) * game.progress, 20);
+
+            ctx.strokeStyle = '#74b9ff';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(50, 20, canvas.width - 100, 20);
+
+            // Draw cycle markers
+            if (game.cycles > 0) {
+                ctx.fillStyle = '#fff';
+                ctx.font = '12px sans-serif';
+                ctx.textAlign = 'right';
+                ctx.fillText(`Cycle ${game.cycles + 1}`, canvas.width - 55, 35);
+            }
+
+            // Draw "TOP" marker
+            ctx.fillStyle = '#ffeaa7';
+            ctx.font = 'bold 14px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('TOP', canvas.width - 80, 55);
+        }
+
+        // Game loop
+        function update() {
+            if (!game.isRollingBack && messageEl.style.display !== 'block') {
+                // Moving up
+                game.progress += game.baseSpeed * game.speed * 0.01;
+
+                if (game.progress >= 1) {
+                    game.progress = 1;
+                    game.cycles++;
+                    game.speed += 0.2; // Permanent speed boost
+                    game.baseSpeed += 0.02; // Gets faster each cycle
+                    showDisruption();
+                }
+            } else if (game.isRollingBack) {
+                // Rolling back
+                game.progress -= 0.02;
+
+                if (game.progress <= 0) {
+                    game.progress = 0;
+                    game.isRollingBack = false;
+                }
+            }
+
+            updateStats();
+            draw();
+            requestAnimationFrame(update);
+        }
+
+        // Initialize
+        generateHill();
+        generateStars();
+        updateStats();
+        update();
+
+        // Make applyPractice available globally
+        window.applyPractice = applyPractice;
+    </script>
+</body>
+</html>

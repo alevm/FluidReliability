@@ -23,7 +23,7 @@ Get the complete 40+ page whitepaper including:
 
 ### Enter your email to download
 
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form action="https://formspree.io/f/lvmlvm@gmail.com" method="POST">
   <input type="hidden" name="_subject" value="Whitepaper Download Request">
   <input type="hidden" name="_next" value="https://alevm.github.io/FluidReliability/download/thanks/">
 

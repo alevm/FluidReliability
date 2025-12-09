@@ -11,17 +11,13 @@ title: Fluid Reliability Framework
 
 ---
 
-## Transform Your SRE Organization
+## An Organization That Learned to Adapt
 
-**Your team is drowning in TOIL. Your best engineers are burning out. Every acquisition sets you back to zero.**
+In 2023, our TOIL hit 83.9%. Every acquisition set us back. Every merger erased hard-won progress. We were drowning.
 
-This framework changed that for us—and it can change it for you.
+By 2025, we hit 50.6%—beating Google's target—while growing from 4 to 38 engineers with zero critical knowledge loss. Not because we avoided change, but because we learned to metabolize it.
 
-In 2023, our TOIL hit 83.9%. We were overwhelmed, losing ground with every merger. By 2025, we hit 50.6%—beating Google's target—while growing from 4 to 38 engineers with zero critical knowledge loss.
-
-**This isn't theory. It's six years of validated practice.**
-
-<a href="/FluidReliability/download/" style="background: #2c5282; color: white; padding: 12px 24px; text-decoration: none; display: inline-block; margin: 20px 0;">Download the Whitepaper</a>
+**This is the story of an organization that learned to reshape itself continuously—not as a reaction to change, but as its natural state.**
 
 ---
 
