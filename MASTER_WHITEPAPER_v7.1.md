@@ -19,6 +19,11 @@
 
 ---
 
+![Key Metrics Dashboard](docs/assets/images/graphs/metrics_dashboard.png)
+*Figure: Key metrics dashboard showing framework outcomes across all major indicators*
+
+---
+
 # Table of Contents
 
 1. [Abstract](#abstract)
@@ -73,6 +78,9 @@ The framework achieves **Google SRE's <60% TOIL standard** while delivering **5.
 
 # Section 0: The Mitochondrial Fallacy
 ## A Philosophical Foundation for Adaptive Organizations
+
+![Sisyphus](docs/assets/images/sisyphus.jpg)
+*Figure: Sisyphus by Franz von Stuck (1920) — The eternal struggle against repetitive, thankless work mirrors the TOIL burden in SRE organizations*
 
 ---
 
@@ -297,6 +305,9 @@ The same team that learned to treat servers as cattle learned to treat structure
 
 The SRE industry faces unprecedented challenges. Recent research reveals the depth of the crisis that the Fluid Reliability framework addresses:
 
+![Burnout Crisis Statistics](docs/assets/images/graphs/burnout_crisis.png)
+*Figure: Industry burnout statistics from Fortune/DHR Global, Catchpoint, and DORA research (2024-2025)*
+
 ## 1.1 The Burnout Epidemic
 
 | Source | Finding | Year |
@@ -334,6 +345,9 @@ The framework addresses this gap by providing the cultural and organizational su
 ## Three-Tier Synthesis of Six Academic Sources
 
 The Fluid Reliability framework synthesizes six theoretical sources organized into three tiers:
+
+![Three-Tier Theoretical Architecture](docs/assets/images/graphs/theoretical_tiers.png)
+*Figure: Three-tier theoretical architecture synthesizing six academic sources*
 
 - **Tier 1 (Foundation):** Luhmann's semipermeable boundaries + Olivetti's human-centered community — the WHY and WHAT
 - **Tier 2 (Learning):** Argyris & Schön's double-loop learning + Rogers' diffusion — HOW change happens
@@ -412,6 +426,12 @@ This synthesis distinguishes Fluid Reliability from purely technical frameworks.
 # Section 3: Evolution Through Three Organizational Cycles
 
 The evolution was not linear—it was **cyclic, iterative, and fractal**. The entire framework was executed during each major organizational cycle.
+
+![Team Growth Through Cycles](docs/assets/images/graphs/team_growth.png)
+*Figure: Team growth from 4 to 38 engineers (850%) through three organizational cycles with zero critical knowledge loss*
+
+![Fractal Timeline](docs/assets/images/fractal_timeline.png)
+*Figure: Fractal execution of Fluid Reliability phases across organizational cycles*
 
 Each cycle was its own interregnum—a transitional period where the old organizational structure was dying and the new had not yet emerged. The morbid symptoms appeared on schedule: confusion, resistance, the gravitational pull toward familiar dysfunction. The framework's value was not preventing these symptoms but providing a metabolism for processing them.
 
@@ -505,6 +525,12 @@ Each cycle demonstrates a key insight: the framework operates **fractally**. The
 
 The framework consists of five interconnected practices that operate fractally—each can be applied at team, division, or enterprise levels.
 
+![Five Core Practices](docs/assets/images/graphs/five_practices.png)
+*Figure: The Five Core Practices — Protect, Prepare, Pulse, Pool, Promote*
+
+![Fractal Levels](docs/assets/images/graphs/fractal_levels.png)
+*Figure: Fractal application of practices at Individual, Team, and Organization levels*
+
 ---
 
 ## 4.1 Structured Gatekeeping (Protect)
@@ -516,6 +542,9 @@ The framework consists of five interconnected practices that operate fractally�
 - Tier 3 (Ohno/Anderson): Kanban boards IMPLEMENT the membrane visually
 
 ### Gatekeeper Evolution: Manual to Intelligent
+
+![Gatekeeper Evolution](docs/assets/images/graphs/gatekeeper_evolution.png)
+*Figure: Gatekeeper evolution from manual triage to intelligent membrane*
 
 | Phase | Period | Description |
 |-------|--------|-------------|
@@ -703,6 +732,9 @@ This observation—that large organizations lose the ability to sense their own 
 
 Comprehensive validation against **25,498 operational tickets** spanning September 2020 through November 2025.
 
+![Ticket Volume Trend](docs/assets/images/graphs/ticket_volume.png)
+*Figure: Ticket volume growth across 5 years — 25,498 total tickets analyzed*
+
 ---
 
 ## 6.1 Data Sources
@@ -719,6 +751,9 @@ Comprehensive validation against **25,498 operational tickets** spanning Septemb
 ## 6.2 TOIL Ratio Trajectory (2021-2025)
 
 **KEY FINDING:** TOIL ratio dropped from 83.9% (2023 peak) to 50.6% (2025)—a **33.3 percentage point reduction**.
+
+![TOIL Trajectory](docs/assets/images/graphs/toil_trajectory.png)
+*Figure: TOIL ratio trajectory showing 33.3 percentage point reduction and achievement of Google SRE's <60% target*
 
 | Year | Tickets | TOIL % | Context |
 |------|---------|--------|---------|
@@ -750,9 +785,15 @@ By 2025, TOIL had dropped to 50.6%—not because we avoided the crisis, but beca
 
 Configuration + Task = 45% of TOIL. Consolidated gatekeepers enable unified automation strategies.
 
+![TOIL Categories](docs/assets/images/graphs/toil_categories.png)
+*Figure: TOIL category breakdown — Configuration and Task types represent 45% of total TOIL*
+
 ---
 
 ## 6.4 Cycle Time Analysis
+
+![Cycle Time Comparison](docs/assets/images/graphs/cycle_time_comparison.png)
+*Figure: Cycle time improvement — 47% reduction in mean cycle time, 92% reduction in P95*
 
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
@@ -766,6 +807,9 @@ Configuration + Task = 45% of TOIL. Consolidated gatekeepers enable unified auto
 
 MTTR from SRE monitoring (distinct from JIRA ticket cycle time):
 
+![MTTR Comparison](docs/assets/images/graphs/mttr_comparison.png)
+*Figure: Mean Time to Recovery by product from SRE monitoring data*
+
 | Product | MTTR |
 |---------|------|
 | e-Builder | 43 minutes |
@@ -777,6 +821,9 @@ MTTR from SRE monitoring (distinct from JIRA ticket cycle time):
 ## 6.6 Seasonality Analysis
 
 **2.7x variance** between peak (1,461 tickets) and low (544 tickets) months—successfully managed through Shared Resource Management practice.
+
+![Seasonality Analysis](docs/assets/images/graphs/seasonality.png)
+*Figure: Ticket volume seasonality showing 2.7x variance successfully managed through resource pooling*
 
 ---
 
@@ -792,6 +839,9 @@ MTTR from SRE monitoring (distinct from JIRA ticket cycle time):
 
 # Section 7: Monetary Benefits Analysis
 ## Three-Tier Confidence Model
+
+![ROI Three-Tier Model](docs/assets/images/graphs/roi_tiers.png)
+*Figure: Monetary benefits analysis showing three-tier confidence model with ROI ranging from 5.2:1 to 11.2:1*
 
 ---
 
@@ -868,6 +918,9 @@ The framework's impact extends to partner operations, providing real-world valid
 
 ## 8.2 OLA Adherence Trajectory
 
+![OLA Adherence](docs/assets/images/graphs/ola_adherence.png)
+*Figure: Partner OLA adherence trajectory showing Q4 2025 sharp recovery (+25.2 points)*
+
 | Quarter | Tickets | Adherence | Trend |
 |---------|---------|-----------|-------|
 | Q1 2025 | 200 | 55.5% | Baseline |
@@ -882,6 +935,9 @@ The framework's impact extends to partner operations, providing real-world valid
 ## 8.3 Self-Service Evolution (2026 Roadmap)
 
 The framework drives continuous improvement through automation:
+
+![Self-Service Roadmap](docs/assets/images/graphs/self_service_roadmap.png)
+*Figure: Self-service evolution roadmap showing current vs. target adherence by service tier*
 
 | Tier | Services | Current Adherence | Post-Automation | Timeline |
 |------|----------|------------------|-----------------|----------|
@@ -1097,6 +1153,9 @@ What we can choose is how to navigate:
 ### The Original Proposal
 
 In early 2023, before the quantitative validation documented in this paper, a cross-functional team proposed the foundational elements of what would become the Fluid Reliability framework.
+
+![Framework Validation](docs/assets/images/graphs/framework_validation.png)
+*Figure: 2023 Predictions vs 2025 Outcomes — All 6 core predictions validated*
 
 **Key Predictions and Outcomes:**
 

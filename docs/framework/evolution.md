@@ -11,6 +11,12 @@ permalink: /framework/evolution/
 
 The evolution was not linear—it was **cyclic, iterative, and fractal**. The entire framework was executed during each major organizational cycle.
 
+![Team Growth](../assets/images/graphs/team_growth.png)
+*Team growth from 4 to 38 engineers (850%) through three organizational cycles*
+
+![Merger Cycles](../assets/images/merger_cycles.png)
+*Cyclic implementation of Fluid Reliability framework across merger eras*
+
 ---
 
 ## Cyclic Application
@@ -75,6 +81,9 @@ The Q3 2025 Management Oversight Board documented carry-over projects:
 ---
 
 ## Validation Summary
+
+![Framework Validation](../assets/images/graphs/framework_validation.png)
+*2023 Predictions vs 2025 Outcomes — All 6 core predictions validated*
 
 | Metric | Cycle 1 (2021) | Cycle 3 (2025) | Change |
 |--------|----------------|----------------|--------|

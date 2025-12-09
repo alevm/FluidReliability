@@ -11,6 +11,9 @@ title: Fluid Reliability Framework
 
 ---
 
+![Key Metrics Dashboard](assets/images/graphs/metrics_dashboard.png)
+*Framework outcomes across all major indicators*
+
 ## An Organization That Learned to Adapt
 
 In 2023, our TOIL hit 83.9%. Every acquisition set us back. Every merger erased hard-won progress. We were drowning.
@@ -42,6 +45,9 @@ The framework is validated through analysis of **{{ site.data.version.dataset.ti
 
 The SRE industry faces unprecedented challenges:
 
+![Burnout Crisis](assets/images/graphs/burnout_crisis.png)
+*Industry burnout statistics (2024-2025)*
+
 - **82%** of employees at risk of burnout (Fortune/DHR Global 2024-2025)
 - **57%** of SREs spend more than half their week on TOIL despite AI adoption
 - **14%** drop in change stability when using platform engineering without cultural change (DORA 2024)
@@ -69,6 +75,9 @@ The framework synthesizes six academic sources into three tiers:
 ---
 
 ## The Five Core Practices
+
+![Five Core Practices](assets/images/graphs/five_practices.png)
+*The Five P's: Protect, Prepare, Pulse, Pool, Promote*
 
 ### 1. Structured Gatekeeping
 Shield technical teams from operational noise through structured intake processes and visual triage systems. Acts as Luhmann's "semipermeable membrane" for the organization.

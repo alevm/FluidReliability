@@ -9,6 +9,9 @@ permalink: /framework/philosophy/
 
 *A Philosophical Foundation for Adaptive Organizations*
 
+![Sisyphus](../assets/images/sisyphus.jpg)
+*Sisyphus by Franz von Stuck (1920) — The eternal struggle against repetitive, thankless work mirrors the TOIL burden in SRE organizations*
+
 ---
 
 ## The False Promise of Immutable Structure
