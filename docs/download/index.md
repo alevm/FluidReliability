@@ -19,26 +19,58 @@ Get the complete 40+ page whitepaper including:
 
 ---
 
-<div class="download-form">
+<div class="download-form" id="password-section">
 
-### Enter your email to download
+### Enter password to download
 
-<form action="https://formspree.io/f/lvmlvm@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="Whitepaper Download Request">
-  <input type="hidden" name="_next" value="https://alevm.github.io/FluidReliability/download/thanks/">
+<div style="margin: 20px 0;">
+  <label for="password">Password:</label>
+  <input type="password" id="password" placeholder="Enter password" style="width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;">
 
-  <label for="email">Email address:</label>
-  <input type="email" id="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 10px; margin: 10px 0; font-size: 16px;">
-
-  <label for="organization">Organization (optional):</label>
-  <input type="text" id="organization" name="organization" placeholder="Your company" style="width: 100%; padding: 10px; margin: 10px 0; font-size: 16px;">
-
-  <button type="submit" style="background: #2c5282; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; margin-top: 10px;">
-    Download Whitepaper (PDF)
+  <button onclick="checkPassword()" style="background: #2c5282; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; margin-top: 10px; border-radius: 4px;">
+    Unlock Download
   </button>
-</form>
+
+  <p id="error-message" style="color: #e53e3e; display: none; margin-top: 10px;">Incorrect password. Please try again.</p>
+</div>
 
 </div>
+
+<div id="download-section" style="display: none;">
+
+### Download Ready
+
+<p style="color: #38a169; font-weight: bold;">Password accepted. Click below to download:</p>
+
+<a href="{{ site.baseurl }}/assets/downloads/MASTER_WHITEPAPER_v7.1.pdf" download style="display: inline-block; background: #38a169; color: white; padding: 12px 24px; text-decoration: none; font-size: 16px; margin-top: 10px; border-radius: 4px;">
+  Download Whitepaper (PDF)
+</a>
+
+<p style="margin-top: 15px; font-size: 14px; color: #666;">
+  Or download as Markdown: <a href="{{ site.baseurl }}/assets/downloads/MASTER_WHITEPAPER_v7.1.md" download>MASTER_WHITEPAPER_v7.1.md</a>
+</p>
+
+</div>
+
+<script>
+function checkPassword() {
+  var password = document.getElementById('password').value;
+  if (password === 'ShapeOfWater') {
+    document.getElementById('password-section').style.display = 'none';
+    document.getElementById('download-section').style.display = 'block';
+  } else {
+    document.getElementById('error-message').style.display = 'block';
+    document.getElementById('password').value = '';
+  }
+}
+
+// Allow Enter key to submit
+document.getElementById('password').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    checkPassword();
+  }
+});
+</script>
 
 ---
 

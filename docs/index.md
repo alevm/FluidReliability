@@ -15,9 +15,6 @@ title: Fluid Reliability Framework
 
 ---
 
-![Key Metrics Dashboard]({{ site.baseurl }}/assets/images/graphs/metrics_dashboard.png)
-*Figure 1: Key metrics dashboard showing framework outcomes across all major indicators*
-
 ## An Organization That Learned to Adapt
 
 In 2023, our TOIL hit 83.9%. Every acquisition set us back. Every merger erased hard-won progress. We were drowning.
