@@ -17,9 +17,9 @@ title: Fluid Reliability Framework
 
 ## An Organization That Learned to Adapt
 
-In 2023, our TOIL hit 83.9%. Every acquisition set us back. Every merger erased hard-won progress. We were drowning.
+In 2024, our TOIL hit 59.7%. Every acquisition set us back. Every merger erased hard-won progress. We were drowning.
 
-By 2025, we hit 50.6%—beating Google's target—while growing from 4 to 38 engineers with zero critical knowledge loss. Not because we avoided change, but because we learned to metabolize it.
+By 2025, content-based TOIL analysis shows 44.3%—beating Google's <60% target—while growing from 4 to 38 engineers with zero critical knowledge loss. Configuration tickets dropped 66%. Not because we avoided change, but because we learned to metabolize it.
 
 **This is the story of an organization that learned to reshape itself continuously—not as a reaction to change, but as its natural state.**
 
@@ -35,10 +35,15 @@ The framework is validated through analysis of **{{ site.data.version.dataset.ti
 
 | Metric | Before | After | Change |
 |--------|--------|-------|--------|
-| TOIL Ratio | {{ site.data.version.metrics.toil_before }} (2023) | {{ site.data.version.metrics.toil_after }} (2025) | -{{ site.data.version.metrics.toil_reduction }} pp |
+| TOIL Ratio | {{ site.data.version.metrics.toil_before }} (2024) | {{ site.data.version.metrics.toil_after }} (2025) | -{{ site.data.version.metrics.toil_reduction }} pp |
+| Configuration TOIL | 25.6% | 8.1% | -{{ site.data.version.metrics.config_reduction }} |
 | P95 Cycle Time | {{ site.data.version.metrics.p95_cycle_before }} | {{ site.data.version.metrics.p95_cycle_after }} | -{{ site.data.version.metrics.p95_improvement }} |
+| Mean Cycle Time | {{ site.data.version.metrics.mean_cycle_before }} | {{ site.data.version.metrics.mean_cycle_after }} | -{{ site.data.version.metrics.mean_cycle_improvement }} |
 | Team Size | {{ site.data.version.team.initial }} engineers | {{ site.data.version.team.current }} engineers | +{{ site.data.version.team.growth_percent }}% |
 | Retention | Baseline | +{{ site.data.version.metrics.retention_improvement }} vs peers | Sustained |
+| Cross-BA Collaboration | 63% (Jan 2025) | 74% (Oct 2025) | +11 pp |
+| Partner OLA | 42% (Q1 2025) | 80.3% (Q4 2025) | +38 pp |
+| Rework Rate | - | {{ site.data.version.metrics.rework_rate }} | Acceptable |
 
 ---
 

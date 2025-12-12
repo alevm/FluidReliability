@@ -7,7 +7,7 @@ permalink: /download/
 
 # Download the Whitepaper
 
-## The Shape of the Water: Fluid Reliability Framework v7.1
+## The Shape of the Water: Fluid Reliability Framework v7.3
 
 Get the complete 40+ page whitepaper including:
 
@@ -42,12 +42,12 @@ Get the complete 40+ page whitepaper including:
 
 <p style="color: #38a169; font-weight: bold;">Password accepted. Click below to download:</p>
 
-<a href="{{ site.baseurl }}/assets/downloads/MASTER_WHITEPAPER_v7.1.pdf" download style="display: inline-block; background: #38a169; color: white; padding: 12px 24px; text-decoration: none; font-size: 16px; margin-top: 10px; border-radius: 4px;">
+<a href="{{ site.baseurl }}/assets/downloads/MASTER_WHITEPAPER_v7.3.pdf" download style="display: inline-block; background: #38a169; color: white; padding: 12px 24px; text-decoration: none; font-size: 16px; margin-top: 10px; border-radius: 4px;">
   Download Whitepaper (PDF)
 </a>
 
 <p style="margin-top: 15px; font-size: 14px; color: #666;">
-  Or download as Markdown: <a href="{{ site.baseurl }}/assets/downloads/MASTER_WHITEPAPER_v7.1.md" download>MASTER_WHITEPAPER_v7.1.md</a>
+  Or download as Markdown: <a href="{{ site.baseurl }}/assets/downloads/MASTER_WHITEPAPER_v7.3.md" download>MASTER_WHITEPAPER_v7.3.md</a>
 </p>
 
 </div>
@@ -87,9 +87,9 @@ The framework addresses the documented SRE burnout crisis (82% of tech workers a
 
 | Metric | Result |
 |--------|--------|
-| TOIL Reduction | 83.9% → 50.6% |
+| Strict TOIL | 59.7% → 44.7% |
 | Team Growth | 4 → 38 engineers |
-| P95 Cycle Time | 92% improvement |
+| P95 Cycle Time | 81% improvement |
 | Statistical Significance | p < 0.001 |
 
 ---

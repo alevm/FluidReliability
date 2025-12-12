@@ -40,37 +40,53 @@ Comprehensive validation against **25,498 operational tickets** spanning Septemb
 
 ## TOIL Ratio Trajectory
 
-TOIL ratio dropped from 83.9% (2023 peak) to 50.6% (2025)—a **33.3 percentage point reduction**.
+Using strict content-based analysis against Google SRE's 5-point TOIL definition, TOIL ratio dropped from **59.7% (2024) to 44.7% (2025)**—a **15.0 percentage point reduction** and beating Google's <60% target.
 
-![TOIL Trajectory]({{ site.baseurl }}/assets/images/graphs/toil_trajectory.png)
-*Figure 3: TOIL ratio trajectory showing 33.3pp reduction and Google SRE target achievement*
+![TOIL Reduction]({{ site.baseurl }}/assets/images/graphs/toil_reduction_yoy.png)
+*Figure 3: Real TOIL reduction — Configuration tickets dropped 73%, representing primary TOIL source*
 
-| Year | Tickets | TOIL % | Context |
-|------|---------|--------|---------|
-| 2021 | 100 | 73.0% | Initial baseline |
-| 2022 | 1,472 | 75.8% | First merger |
-| 2023 | 8,045 | **83.9%** | Peak (multi-product stress) |
-| 2024 | 9,054 | 63.4% | Framework maturity |
-| 2025 | 6,824 | **50.6%** | Google <60% achieved |
+| Year | Tickets | Strict TOIL % | Context |
+|------|---------|---------------|---------|
+| 2024 | 6,833 | **59.7%** | Baseline (validated methodology) |
+| 2025 | 7,085 (Jan-Nov) | **44.7%** | Google <60% achieved |
 
-### The 2023 Crisis: A Failure Metabolized
+### Configuration TOIL: The Primary Victory
 
-The 83.9% peak was lived experience. Multiple acquired teams brought their own cultures: different ticketing conventions, tribal knowledge, hero dependencies, and manual processes we thought we had eliminated. **We stepped backward in maturity.**
+Configuration tickets—the largest TOIL category—dropped from 1,466 (2024) to 577 (2025), a **61% reduction**. This represents deliberate automation investment and self-service enablement.
 
-The framework's response: Quarterly Adaptation surfaced that the problem wasn't technical debt—it was *cultural debt* from acquisitions. Deliberate rotation moved engineers across merged boundaries. By 2025, the cultural tide had turned.
+### Methodology Note
+
+Strict analysis applies Google SRE's 5-point TOIL definition (manual, repetitive, automatable, scales with growth, no enduring value) with weighted rates by issue type. The 44.7% result is validated against the JIRA TOIL field (49.4% of marked tickets = Yes), confirming methodological soundness.
 
 ---
 
 ## Cycle Time Analysis
 
-![Cycle Time Comparison]({{ site.baseurl }}/assets/images/graphs/cycle_time_comparison.png)
-*Figure 4: Cycle time improvement — 47% mean reduction, 92% P95 reduction*
+![Cycle Time Compression]({{ site.baseurl }}/assets/images/graphs/cycle_time_compression.png)
+*Figure 4: 2025 cycle time analysis — Mean 12.6 days, Median 3.0 days, P95 56.8 days*
 
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| Mean Cycle Time | 17.91 days | 9.50 days | **47% reduction** |
-| P95 Cycle Time | 294.60 days | ~23 days | **92% reduction** |
-| Max Cycle Time | — | — | **81% reduction** |
+### Historical Before/After
+
+| Metric | Before (Pre-2025) | 2025 (Jan-Nov) | Improvement |
+|--------|-------------------|----------------|-------------|
+| Mean Cycle Time | 17.91 days | 12.6 days | **30% reduction** |
+| P95 Cycle Time | 294.60 days | 56.8 days | **81% reduction** |
+| Median Cycle Time | — | 3.0 days | Stable throughput |
+
+### 2025 Quarterly Breakdown
+
+*Data Source: 7,085 tickets (Jan-Nov 2025)*
+
+| Quarter | Tickets | Mean CT | Median CT | P95 CT |
+|---------|---------|---------|-----------|--------|
+| Q1 | 1,826 | 16.1 days | 3.0 days | 80.8 days |
+| Q2 | 1,855 | 9.5 days | 2.0 days | 38.6 days |
+| Q3 | 2,017 | 12.8 days | 2.0 days | 61.0 days |
+| Q4 (Oct-Nov) | 1,387 | 12.1 days | 3.0 days | 40.4 days |
+
+**Result:** Q2 achieved best mean cycle time (9.5 days). Median cycle time consistently at 2-3 days demonstrates stable throughput.
+
+> **Note:** Q1 elevated metrics reflect 12.6% December 2024 backlog spillover (230 of 1,826 tickets).
 
 ---
 
@@ -80,9 +96,9 @@ MTTR from SRE monitoring (distinct from ticket cycle time):
 
 | Product | MTTR |
 |---------|------|
-| e-Builder | 43 minutes |
-| Cityworks | 11 hours |
-| AgileAssets | 22.59 hours |
+| Product A (Primary) | 43 minutes |
+| Product B (Acquired) | 11 hours |
+| Product C (Acquired) | 22.59 hours |
 
 ---
 
@@ -170,14 +186,88 @@ MTTR from SRE monitoring (distinct from ticket cycle time):
 
 ---
 
-## Current Operations (November 2025)
+## Cross-BA Collaboration (Rotation Success)
+
+![Cross-BA Collaboration]({{ site.baseurl }}/assets/images/graphs/cross_ba_collaboration.png)
+*Figure 6: Cross-BA collaboration rate growth — 63% → 74% (+11pp)*
+
+Monthly tracking demonstrates rotation and pooling success:
+
+| Month | Single-BA | Cross-BA | Cross-BA % |
+|-------|-----------|----------|------------|
+| January | 14 | 24 | 63% |
+| April | 13 | 25 | 66% |
+| July | 12 | 24 | 67% |
+| **October** | 10 | 28 | **74%** |
+
+**Result:** Cross-BA collaboration increased **11 percentage points** (63% → 74%).
+
+*Definition: Cross-BA Workers = Engineers with tickets in 2+ Business Areas per month*
+
+---
+
+## Partner OLA Trajectory (2025)
+
+![OLA Quarterly Recovery]({{ site.baseurl }}/assets/images/graphs/ola_quarterly_recovery.png)
+*Figure 7: Quarterly OLA adherence recovery — 42% → 80.3% (+38pp)*
+
+| Quarter | Within SLA | Total | Adherence | Change |
+|---------|------------|-------|-----------|--------|
+| Q1 2025 | 29 | 69 | **42.0%** | Baseline |
+| Q2 2025 | 43 | 76 | **56.6%** | +14.6 pp |
+| Q3 2025 | 176 | 240 | **73.3%** | +16.7 pp |
+| **Q4 2025** | 61 | 76 | **80.3%** | **Target Met** |
+
+**Result:** OLA improved from 42% to 80.3%—a **38 percentage point improvement**.
+
+---
+
+## Current Operations (December 2025)
 
 | Metric | Value |
 |--------|-------|
-| TOIL ratio | 50.6% |
+| Strict TOIL | 44.7% |
+| Cross-BA Collaboration | 74% |
+| Partner OLA | 80.3% |
+| Rework Rate | 13.3% |
+| Monthly Throughput | 644 tickets |
 | Migration pipeline | 54 total |
 | Compliance | ISO 27001, SOC 2/3, FedRAMP, TX-RAMP |
-| Security incidents | Zero (Q2 2025) |
+| Security incidents | Zero (Q2-Q4 2025) |
+
+---
+
+## Operational Reporting Framework
+
+Continuous measurement enables ongoing framework validation. The operational reporting system produces three automated reports:
+
+### SRE Operations Report
+- **Volume Analysis:** Monthly/quarterly ticket trends with MoM comparison
+- **TOIL Measurement:** Dual methodology (Proxy by Issue Type + Content Scan by keywords)
+- **Cycle Time Distribution:** Mean, Median, P95 with bucket analysis (0-7d, 8-14d, 15-30d, 31-60d, >60d)
+- **Component Breakdown:** Workload distribution across business units
+
+### OLA Performance Report
+- **Business Days Calculation:** Excludes weekends for accurate SLA measurement
+- **Service Type Analysis:** Per-request-type adherence rates
+- **Back-and-Forth Detection:** Comment count correlation identifies root causes
+- **Missed OLA Analysis:** Specific tickets and delay patterns
+
+### Personnel Allocation Report
+- **Team Structure:** Manager-based organization view
+- **BU Distribution:** Effort allocation across business units (100% model)
+- **Migration Tracking:** Keyword-based identification of migration work
+- **Workload Tiers:** High/Medium/Low/Minimal distribution analysis
+
+### Measurement Philosophy
+
+> *"What gets measured gets managed, but only if the measurement methodology is sound."*
+
+The framework emphasizes:
+1. **Multiple methodologies:** Cross-validate metrics using different approaches
+2. **Trend over absolute:** Focus on direction of change, not single-point values
+3. **Root cause visibility:** Identify *why* metrics change, not just *that* they changed
+4. **Reproducibility:** Documented methodology enables consistent measurement
 
 ---
 

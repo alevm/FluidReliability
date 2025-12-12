@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -27,8 +29,8 @@
   </div>
 
   <footer>
-    <p>{{ site.author.name }} · Version 7.0 · December 2025</p>
-    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+    <p>{{ site.data.version.author }} · Version {{ site.data.version.version }} · {{ site.data.version.date }}</p>
+    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">{{ site.data.version.license }}</a></p>
   </footer>
 </body>
 </html>
