@@ -1,1 +1,84 @@
-../../VERSION.yml
+# Fluid Reliability Framework - Version Metadata
+# This file is the single source of truth for version info
+# Used by: docs (Jekyll), whitepaper, sync scripts
+
+version: "7.3"
+date: "December 2025"
+author: "Andrea Valenti"
+title: "Fluid Reliability Framework"
+subtitle: "An Adaptive Framework for SRE Organizational Transformation"
+
+# Dataset metadata
+dataset:
+  tickets: 25498
+  years: "2019-2025"
+  boards: 3
+
+# Team metrics
+team:
+  initial: 4
+  current: 38
+  growth_percent: 850
+
+# Key outcomes (keep in sync with whitepaper Section 6)
+# Updated December 11, 2025 - Strict TOIL calculation against Google SRE definition
+metrics:
+  toil_before: "59.7%"
+  toil_after: "44.7%"
+  toil_reduction: "15.0"
+  toil_methodology: "Strict Content-Based (Google SRE 5-point definition)"
+  toil_proxy: "18.4%"
+  toil_proxy_description: "Configuration + Maintenance only"
+  config_reduction: "66%"
+  p95_cycle_before: "294.6 days"
+  p95_cycle_after: "56.8 days"
+  p95_improvement: "81%"
+  mean_cycle_before: "17.91 days"
+  mean_cycle_after: "12.6 days"
+  mean_cycle_improvement: "30%"
+  retention_improvement: "15-20%"
+  rework_rate: "13.3%"
+  monthly_throughput: 644
+
+# Statistical validation
+stats:
+  chi_square: 285.4
+  p_value: "< 0.001"
+  cramers_v: 0.13
+  effect_size: "medium"
+  roi_low: "5.2:1"
+  roi_high: "11.2:1"
+
+# 2025 metrics (new in v7.2) - Updated Dec 11, 2025
+# Source: JIRA_2025_Combined_Full_20251211_1310.csv (7,085 tickets Jan-Nov)
+metrics_2025:
+  tickets_2025: 7085
+  cross_ba_jan: "63%"
+  cross_ba_oct: "74%"
+  cross_ba_improvement: "11"
+  ola_q1: "42.0%"
+  ola_q4: "80.3%"
+  ola_improvement: "38"
+  # Cycle time metrics (Jan-Nov 2025)
+  mean_cycle_time: "12.6 days"
+  median_cycle_time: "3.0 days"
+  p95_cycle_time: "56.8 days"
+  # Quarterly breakdown
+  q1_tickets: 1826
+  q1_mean_ct: "16.1 days"
+  q1_median_ct: "3.0 days"
+  q2_tickets: 1855
+  q2_mean_ct: "9.5 days"
+  q2_median_ct: "2.0 days"
+  q3_tickets: 2017
+  q3_mean_ct: "12.8 days"
+  q3_median_ct: "2.0 days"
+  q4_tickets: 1387
+  q4_mean_ct: "12.1 days"
+  q4_median_ct: "3.0 days"
+  # Backlog analysis
+  backlog_2024_spillover: 260
+  backlog_q1_pct: "12.6%"
+
+# License
+license: "CC BY-NC-SA 4.0"
